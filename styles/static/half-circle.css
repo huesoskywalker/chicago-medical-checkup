@@ -1,0 +1,21 @@
+.half-circle {
+    z-index: 0;
+    position: absolute;
+    opacity: 0.15;
+    border-radius: 9999px;
+    border: 28px white solid;
+}
+
+.half-circle.info-container {
+    width: 436px;
+    height: 436px;
+    left: 1651px;
+    top: 123px;
+}
+
+.half-circle.stats-container {
+    width: 308px;
+    height: 308px;
+    left: 1810px;
+    top: 55px;
+}

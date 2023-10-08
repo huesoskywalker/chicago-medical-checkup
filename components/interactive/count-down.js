@@ -7,7 +7,7 @@ class CountDown extends HTMLElement {
 
     async loadContent() {
         await Promise.all([
-            fetch("/templates/count-down.html").then((response) => response.text()),
+            fetch("/templates/interactive/count-down.html").then((response) => response.text()),
             fetch("/styles/interactive/count-down.css").then((response) => response.text()),
         ]).then(([html, css]) => {
             const template = document.createElement("template")

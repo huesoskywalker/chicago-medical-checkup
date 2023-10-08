@@ -1,4 +1,4 @@
-export const menuData = [
+const menuData = [
     {
         title: "About Us",
         link: "aboutus.html",
@@ -37,11 +37,12 @@ class NavMenu extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({ mode: "open" })
+        this.menuData = menuData
         this.initScrollHandler = this.initScroll.bind(this)
     }
     async loadContent() {
         await Promise.all([
-            fetch("/templates/nav-menu.html").then((response) => response.text()),
+            fetch("/templates/interactive/nav-menu.html").then((response) => response.text()),
             fetch("/styles/interactive/nav-menu.css").then((response) => response.text()),
         ]).then(([html, css]) => {
             const template = document.createElement("template")
@@ -55,7 +56,7 @@ class NavMenu extends HTMLElement {
     }
     populateMenu() {
         const ul = this.shadowRoot.querySelector(".nav-ul")
-        menuData.forEach((item) => {
+        this.menuData.forEach((item) => {
             const li = document.createElement("li")
             li.classList.add("nav-li__item")
             const anchor = document.createElement("a")

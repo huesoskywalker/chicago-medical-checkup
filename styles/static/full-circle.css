@@ -1,0 +1,20 @@
+.full-circle {
+    z-index: 0;
+    position: absolute;
+    border-radius: 9999px;
+    border: 28px var(--COLOR-WHITE) solid;
+}
+.full-circle.info-container {
+    width: 386px;
+    height: 386px;
+    left: -91px;
+    top: 187px;
+}
+
+.full-circle.stats-container {
+    width: 185px;
+    height: 185px;
+    left: 118px;
+    top: 156px;
+    opacity: 0.15;
+}

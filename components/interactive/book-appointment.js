@@ -2,15 +2,15 @@ class BookAppointment extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({ mode: "open" })
-        this.containerId = undefined
+        this.componentId = undefined
     }
 
     static get observedAttributes() {
         return ["id"]
     }
-    attributeChangedCallback(prop, oldValue, newValue) {
-        if (prop === "id") {
-            this.containerId = newValue
+    attributeChangedCallback(props, oldValue, newValue) {
+        if (props === "id") {
+            this.componentId = newValue
         }
     }
     async loadContent() {
@@ -35,8 +35,8 @@ class BookAppointment extends HTMLElement {
     }
     async connectedCallback() {
         await this.loadContent()
-        if (this.containerId) {
-            this.addClass(this.containerId)
+        if (this.componentId) {
+            this.addClass(this.componentId)
         }
     }
 }
