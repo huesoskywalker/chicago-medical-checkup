@@ -82,21 +82,42 @@
 
 @media (max-width: 768px) {
     .menu-btn {
-        display: block; /* Show the menu button for smaller screens */
+        display: block;
     }
 
     .nav-menu {
-        display: none; /* Initially hide the vertical menu for smaller screens */
+        display: none;
         position: relative;
     }
 
     .nav-menu.active {
-        display: block; /* Show the vertical menu when active */
+        display: block;
     }
 
     .nav-ul {
-        flex-direction: column; /* Stack navigation items vertically */
+        flex-direction: column;
     }
+}
+
+@media only screen and (max-width: 1920px) {
+}
+
+@media only screen and (max-width: 1440px) {
+}
+
+@media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 425px) {
+}
+
+@media only screen and (max-width: 375px) {
+}
+
+@media only screen and (max-width: 320px) {
 }
 
 /* @media only screen and (min-width: 2560px) {

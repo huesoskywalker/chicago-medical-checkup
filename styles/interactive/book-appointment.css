@@ -26,13 +26,34 @@
 
 .book-appointment.stats-container {
     left: 853px;
-    top: 431px;
+    top: 85%;
     background: #ffd900;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .book-appointment.faqs-container {
+    margin-top: 60px;
     left: 45%;
-    top: 65%;
     background: #dd71c6;
+}
+
+@media only screen and (max-width: 1920px) {
+}
+
+@media only screen and (max-width: 1440px) {
+}
+
+@media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 425px) {
+}
+
+@media only screen and (max-width: 375px) {
+}
+
+@media only screen and (max-width: 320px) {
 }

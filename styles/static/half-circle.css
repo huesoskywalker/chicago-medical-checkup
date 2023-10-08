@@ -3,7 +3,7 @@
     position: absolute;
     opacity: 0.15;
     border-radius: 9999px;
-    border: 28px white solid;
+    border: 28px var(--COLOR-WHITE) solid;
 }
 
 .half-circle.info-container {
@@ -18,4 +18,40 @@
     height: 308px;
     left: 1810px;
     top: 55px;
+}
+
+.half-circle.faqs-container {
+    width: 386px;
+    height: 386px;
+    left: -193px;
+    top: 222px;
+    border: 28px var(--COLOR-LIGHT-GRAY) solid;
+}
+
+.half-circle.contact-container {
+    width: 368px;
+    height: 368px;
+    right: -12%;
+    top: 1%;
+    border: 28px var(--COLOR-LIGHT-GRAY) solid;
+}
+@media only screen and (max-width: 1920px) {
+}
+
+@media only screen and (max-width: 1440px) {
+}
+
+@media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 425px) {
+}
+
+@media only screen and (max-width: 375px) {
+}
+
+@media only screen and (max-width: 320px) {
 }

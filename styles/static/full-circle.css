@@ -18,3 +18,41 @@
     top: 156px;
     opacity: 0.15;
 }
+
+.full-circle.faqs-container {
+    width: 239px;
+    height: 239px;
+    left: 1600px;
+    top: 107px;
+    border: 28px var(--COLOR-LIGHT-GRAY) solid;
+    opacity: 0.1;
+}
+
+.full-circle.contact-container {
+    width: 230px;
+    height: 230px;
+    left: 1%;
+    top: 30%;
+    border: 28px var(--COLOR-LIGHT-GRAY) solid;
+    opacity: 0.1;
+}
+@media only screen and (max-width: 1920px) {
+}
+
+@media only screen and (max-width: 1440px) {
+}
+
+@media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 425px) {
+}
+
+@media only screen and (max-width: 375px) {
+}
+
+@media only screen and (max-width: 320px) {
+}
