@@ -1,0 +1,132 @@
+@import "./config.css";
+/* @import "./components/container1.css"; */
+/* @import "./components/stats-container.css"; */
+@import "./containers/container3.css";
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    overflow: hidden;
+    width: 1920px;
+    height: 5755px;
+    position: relative;
+}
+
+/* .book-appointment {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+}
+.book-appointment-title {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.book-appointment.in-3-cont-1 {
+    left: 390px;
+    top: 605px;
+    background: #dd71c6;
+}
+
+.book-appointment.in-2-cont-2 {
+    left: 853px;
+    top: 431px;
+    background: #ffd900;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.book-appointment.in-1-cont-3 {
+    left: 20%;
+    top: 70%;
+    background: #dd71c6;
+} */
+
+.container-7 {
+    width: 1920px;
+    height: 590px;
+    left: 0px;
+    top: 5165px;
+    position: absolute;
+    background: var(--COLOR-WHITE);
+}
+
+.full-circle {
+    position: absolute;
+    border-radius: 9999px;
+    border: 28px white solid;
+}
+
+.background-circle-1 {
+    width: 386px;
+    height: 386px;
+    position: absolute;
+    border-radius: 9999px;
+    border: 28px var(--COLOR-WHITE) solid;
+}
+
+.background-circle-2 {
+    width: 185px;
+    height: 185px;
+    left: 118px;
+    top: 156px;
+    position: absolute;
+    opacity: 0.15;
+    border-radius: 9999px;
+    border: 28px white solid;
+}
+
+.half-circle {
+    position: absolute;
+    opacity: 0.15;
+    border-radius: 9999px;
+    border: 28px white solid;
+}
+
+.half-circle.cont-1 {
+    width: 436px;
+    height: 436px;
+    left: 1651px;
+    top: 123px;
+}
+
+.half-circle.cont-2 {
+    width: 308px;
+    height: 308px;
+    left: 1810px;
+    top: 55px;
+}
+
+@media only screen and (max-width: 1920px) {
+}
+
+@media only screen and (max-width: 1440px) {
+}
+
+@media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 425px) {
+}
+
+@media only screen and (max-width: 375px) {
+}
+
+@media only screen and (max-width: 320px) {
+}

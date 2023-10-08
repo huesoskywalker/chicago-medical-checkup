@@ -1,0 +1,38 @@
+.book-appointment {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+}
+.book-appointment-title {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.book-appointment.info-container {
+    left: 390px;
+    top: 605px;
+    background: #dd71c6;
+}
+
+.book-appointment.stats-container {
+    left: 853px;
+    top: 431px;
+    background: #ffd900;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.book-appointment.in-1-cont-3 {
+    left: 20%;
+    top: 70%;
+    background: #dd71c6;
+}

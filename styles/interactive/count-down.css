@@ -1,0 +1,83 @@
+.count-down-container {
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-top: 41px;
+    padding-bottom: 41px;
+    left: 901px;
+    top: 182px;
+    position: absolute;
+    background: linear-gradient(
+        108deg,
+        rgba(255, 255, 255, 0.51) 0%,
+        rgba(255, 255, 255, 0.49) 100%
+    );
+    border-radius: 50px;
+    backdrop-filter: blur(67px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+}
+
+.count-down {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 53px;
+    display: flex;
+}
+
+.count-down-title {
+    width: 557px;
+    text-align: center;
+    color: #333333;
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: 400;
+    line-height: 28.51px;
+    word-wrap: break-word;
+}
+
+.count-down-items-container {
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 39px;
+    display: inline-flex;
+}
+
+.count-down-item-inner-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 36px;
+    display: inline-flex;
+}
+
+.count-down-item-title-container {
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+}
+
+.count-down-item-title {
+    text-align: center;
+    color: rgb(0, 131, 211);
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: 500;
+    line-height: 32.02px;
+    letter-spacing: 5.85px;
+    word-wrap: break-word;
+}
+
+.count-down-item-value {
+    text-align: center;
+    color: #333333;
+    font-size: 50px;
+    font-family: Montserrat;
+    font-weight: 500;
+    line-height: 88.95px;
+    word-wrap: break-word;
+}
