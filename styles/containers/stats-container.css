@@ -2,7 +2,8 @@
     position: absolute;
     top: 760px;
     left: 0px;
-    width: 1920px;
+    width: 100%;
+    max-width: 1920px;
     height: 570px;
     display: flex;
     background: #dd71c6;
@@ -77,16 +78,13 @@
     word-wrap: break-word;
 }
 
-@media only screen and (max-width: 1920px) {
+@media only screen and (max-width: 1500px) {
 }
 
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 1100px) {
 }
 
-@media only screen and (max-width: 1024px) {
-}
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
 }
 
 @media only screen and (max-width: 425px) {

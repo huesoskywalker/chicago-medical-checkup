@@ -1,5 +1,6 @@
 .container-3 {
-    width: 1920px;
+    width: 100%;
+    max-width: 1920px;
     height: 846px;
     left: 0px;
     top: 1400px;
@@ -88,16 +89,13 @@
 .faq-container.active .faq-dropdown img {
     transform: rotate(180deg);
 }
-@media only screen and (max-width: 1920px) {
+@media only screen and (max-width: 1500px) {
 }
 
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 1100px) {
 }
 
-@media only screen and (max-width: 1024px) {
-}
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
 }
 
 @media only screen and (max-width: 425px) {

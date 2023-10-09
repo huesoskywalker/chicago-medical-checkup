@@ -20,7 +20,7 @@
 
 .book-appointment.info-container {
     left: 22%;
-    bottom: 20%;
+    bottom: 14%;
     background: #dd71c6;
 }
 
@@ -37,16 +37,13 @@
     background: #dd71c6;
 }
 
-@media only screen and (max-width: 1920px) {
+@media only screen and (max-width: 1500px) {
 }
 
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 1100px) {
 }
 
-@media only screen and (max-width: 1024px) {
-}
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
 }
 
 @media only screen and (max-width: 425px) {

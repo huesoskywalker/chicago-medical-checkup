@@ -1,8 +1,8 @@
 .count-down-container {
     padding: 38px 38px;
-    right: 18%;
+    right: 10%;
     top: 27%;
-    width: 30%;
+    width: 35%;
     position: absolute;
     background: linear-gradient(
         108deg,
@@ -80,16 +80,13 @@
     word-wrap: break-word;
 }
 
-@media only screen and (max-width: 1920px) {
+@media only screen and (max-width: 1500px) {
 }
 
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 1100px) {
 }
 
-@media only screen and (max-width: 1024px) {
-}
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
 }
 
 @media only screen and (max-width: 425px) {
