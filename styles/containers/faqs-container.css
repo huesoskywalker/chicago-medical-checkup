@@ -33,7 +33,7 @@
 
 .faq-container {
     width: 100%;
-    padding: 15px;
+    padding: 2%;
     background: #f9f9f9;
     border-radius: 20px;
     position: relative;
@@ -43,24 +43,25 @@
 
 .faq-question {
     color: #333333;
-    font-size: 17px;
+    font-size: 24px;
     font-family: Montserrat;
     font-weight: 500;
-    line-height: 27.6px;
+    line-height: 27px;
     word-wrap: break-word;
-    margin-bottom: 5px;
 }
 
 .faq-dropdown {
     position: absolute;
-    top: 25px;
-    right: 30px;
+    top: 20px;
+    right: 3%;
     cursor: pointer;
     border: none;
     background: none;
 }
 
 .faq-dropdown img {
+    width: 35px;
+    height: 35px;
     transition: transform 0.3s ease-out;
 }
 
@@ -71,7 +72,7 @@
     transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
     font-family: Montserrat;
     font-style: italic;
-    font-size: 17px;
+    font-size: 22px;
     color: #555555;
     background-color: #f0f0f0;
     border-radius: 20px;
@@ -82,17 +83,46 @@
 }
 
 .faq-container.active .faq-answer {
-    max-height: 200px;
-    padding: 10px 10px;
+    max-height: 10%;
+    padding: 10px 15px;
+    margin-top: 1%;
 }
 
 .faq-container.active .faq-dropdown img {
     transform: rotate(180deg);
 }
 @media only screen and (max-width: 1500px) {
+    .faq-question {
+        font-size: 20px;
+        line-height: 25px;
+    }
+    .faq-dropdown {
+        top: 15px;
+    }
+    .faq-dropdown img {
+        width: 27px;
+        height: 27px;
+    }
+    .faq-answer {
+        font-size: 20px;
+    }
 }
 
 @media only screen and (max-width: 1100px) {
+    .inner-1-faqs-container {
+        width: 65%;
+    }
+    .faq-question {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .faq-dropdown img {
+        width: 22px;
+        height: 22px;
+    }
+    .faq-answer {
+        font-size: 18px;
+    }
 }
 
 @media only screen and (max-width: 800px) {

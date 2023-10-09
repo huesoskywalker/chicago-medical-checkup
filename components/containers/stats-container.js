@@ -64,14 +64,12 @@ class StatsContainer extends HTMLElement {
             const itemContainer = document.createElement("div")
             itemContainer.classList.add("inner-1-item-container")
 
-            const logoContainer = document.createElement("div")
-            logoContainer.classList.add("inner-1-logo-container")
-
             const logoImg = document.createElement("img")
             logoImg.src = stat.logo.src
             logoImg.alt = stat.logo.alt
             logoImg.loading = "lazy"
-            logoContainer.appendChild(logoImg)
+            logoImg.classList.add("inner-1-logo")
+            itemContainer.appendChild(logoImg)
 
             const valueContainer = document.createElement("div")
             valueContainer.classList.add("inner-1-value-container")
@@ -90,7 +88,6 @@ class StatsContainer extends HTMLElement {
             descriptionContainer.classList.add("inner-1-description")
             descriptionContainer.textContent = stat.description
 
-            itemContainer.appendChild(logoContainer)
             itemContainer.appendChild(valueContainer)
             itemContainer.appendChild(descriptionContainer)
 

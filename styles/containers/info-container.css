@@ -18,18 +18,18 @@
 }
 
 .inner-2 {
-    width: 25%;
+    width: 28%;
     left: 22%;
-    top: 25%;
+    top: 27%;
     position: absolute;
 }
 
 .inner-2-text {
     color: #333333;
-    font-size: 45px;
+    font-size: 55px;
     font-family: Libre Baskerville;
     font-weight: 400;
-    line-height: 67.5px;
+    line-height: 67px;
     word-wrap: break-word;
 }
 
@@ -37,13 +37,12 @@
     color: #dd71c6;
 }
 
-.inner-4-description {
-    width: 20%;
-    left: 22%;
-    bottom: 37%;
+.inner-2-description {
+    width: 90%;
+    margin-top: 10%;
     position: relative;
     color: #333333;
-    font-size: 20px;
+    font-size: 25px;
     font-family: Montserrat;
     font-weight: 400;
     line-height: 25.6px;
@@ -51,9 +50,26 @@
 }
 
 @media only screen and (max-width: 1500px) {
+    .inner-2-text {
+        font-size: 45px;
+        line-height: 55px;
+    }
+    .inner-2-description {
+        font-size: 20px;
+    }
 }
 
 @media only screen and (max-width: 1100px) {
+    .inner-2 {
+        left: 18%;
+    }
+    .inner-2-text {
+        font-size: 30px;
+        line-height: 50px;
+    }
+    .inner-2-description {
+        font-size: 18px;
+    }
 }
 
 @media only screen and (max-width: 800px) {

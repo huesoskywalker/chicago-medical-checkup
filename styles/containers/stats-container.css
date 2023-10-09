@@ -1,7 +1,5 @@
 .container-2 {
     position: absolute;
-    top: 760px;
-    left: 0px;
     width: 100%;
     max-width: 1920px;
     height: 570px;
@@ -22,35 +20,32 @@
 }
 
 .inner-1-item-container {
-    width: 249px;
+    width: 15%;
     height: 50%;
     padding: 15px;
-    background: white;
+    background: var(--COLOR-WHITE);
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.03);
     border-radius: 20px;
+    display: inline-flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     gap: 15px;
-    display: inline-flex;
     margin: 10px;
-    /* text-align: center; */
 }
 
-.inner-1-logo-container {
-    width: 47px;
-    height: 47px;
+.inner-1-logo {
+    width: 55px;
+    height: 55px;
     position: relative;
     margin-bottom: 15px;
 }
 
 .inner-1-value-container {
-    gap: 13px;
-    display: flex;
+    display: inline-flex;
     justify-content: flex-end;
     align-items: flex-start;
     gap: 13px;
-    display: inline-flex;
 }
 
 .inner-1-value {
@@ -59,7 +54,7 @@
     font-size: 40px;
     font-family: Montserrat;
     font-weight: 500;
-    line-height: 71.16px;
+    line-height: 70px;
     word-wrap: break-word;
 }
 
@@ -71,7 +66,7 @@
     margin-top: 15px;
     text-align: center;
     color: #333333;
-    font-size: 18px;
+    font-size: 21px;
     font-family: Montserrat;
     font-weight: 400;
     line-height: 28.51px;
@@ -79,9 +74,47 @@
 }
 
 @media only screen and (max-width: 1500px) {
+    .inner-1-item-container {
+        height: 45%;
+    }
+    .inner-1-logo {
+        width: 47px;
+        height: 47px;
+    }
+    .inner-1-value-container {
+        gap: 10px;
+    }
+    .inner-1-value {
+        font-size: 35px;
+        line-height: 60px;
+    }
+    .inner-1-description {
+        font-size: 18px;
+    }
 }
 
 @media only screen and (max-width: 1100px) {
+    .inner-1 {
+        gap: 20px;
+    }
+    .inner-1-item-container {
+        height: 40%;
+        gap: 8px;
+    }
+    .inner-1-logo {
+        width: 40px;
+        height: 40px;
+    }
+    .inner-1-value-container {
+        gap: 8px;
+    }
+    .inner-1-value {
+        font-size: 30px;
+        line-height: 50px;
+    }
+    .inner-1-description {
+        font-size: 16px;
+    }
 }
 
 @media only screen and (max-width: 800px) {

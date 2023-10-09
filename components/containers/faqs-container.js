@@ -41,6 +41,7 @@ class FaqsContainer extends HTMLElement {
         super()
         this.attachShadow({ mode: "open" })
         this.faqsData = faqsData
+        this.faqMemoization = undefined
     }
     async loadContent() {
         await Promise.all([
@@ -89,8 +90,17 @@ class FaqsContainer extends HTMLElement {
         })
     }
     toggleDropdown(dropdown) {
+        if (this.faqMemoization) {
+            this.faqMemoization.classList.remove("active")
+        }
         const faqContainer = dropdown.closest(".faq-container")
-        faqContainer.classList.toggle("active")
+        if (this.faqMemoization === faqContainer) {
+            faqContainer.classList.remove("active")
+            this.faqMemoization = undefined
+        } else {
+            faqContainer.classList.add("active")
+            this.faqMemoization = faqContainer
+        }
     }
     async connectedCallback() {
         await this.loadContent()

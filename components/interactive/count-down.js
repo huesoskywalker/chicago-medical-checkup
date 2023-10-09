@@ -3,6 +3,7 @@ class CountDown extends HTMLElement {
         super()
         this.attachShadow({ mode: "open" })
         this.countdownInterval
+        this.endDate = "October 31, 2023, 23:59:59"
     }
 
     async loadContent() {
@@ -21,11 +22,10 @@ class CountDown extends HTMLElement {
     }
 
     initCountdown() {
-        const endDate = new Date("October 31, 2023, 23:59:59").getTime()
+        const endDate = new Date(this.endDate).getTime()
         const updateCountdown = () => {
             const now = new Date().getTime()
             const distance = endDate - now
-
             const days = Math.floor(distance / (1000 * 60 * 60 * 24))
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
