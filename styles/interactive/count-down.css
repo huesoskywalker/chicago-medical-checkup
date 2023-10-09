@@ -1,10 +1,8 @@
 .count-down-container {
-    padding-left: 36px;
-    padding-right: 36px;
-    padding-top: 41px;
-    padding-bottom: 41px;
-    left: 901px;
-    top: 182px;
+    padding: 38px 38px;
+    right: 18%;
+    top: 27%;
+    width: 30%;
     position: absolute;
     background: linear-gradient(
         108deg,
@@ -24,15 +22,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 53px;
+    gap: 50px;
     display: flex;
 }
 
 .count-down-title {
-    width: 557px;
+    /* width: 50%; */
     text-align: center;
     color: #333333;
-    font-size: 18px;
+    font-size: 20px;
     font-family: Montserrat;
     font-weight: 400;
     line-height: 28.51px;

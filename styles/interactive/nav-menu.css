@@ -2,8 +2,8 @@
     position: relative;
 }
 .menu-btn {
+    z-index: 2;
     display: none;
-    cursor: pointer;
 }
 
 .nav-menu {
@@ -14,13 +14,22 @@
 }
 
 .nav-bar {
-    height: 70px;
+    height: 10%;
     z-index: 1;
     position: fixed;
     padding-top: 3%;
     right: 0;
+    left: 0;
     width: 100%;
     transition: background-color 0.3s, backdrop-filter 0.3s;
+}
+.group-86 {
+    width: 138px;
+    height: 62.09px;
+    position: fixed;
+    z-index: 1;
+    top: 25px;
+    left: 10%;
 }
 .scrolled {
     backdrop-filter: blur(15px);
@@ -32,7 +41,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 10px;
+    gap: 20px;
 }
 .nav-li__item {
     display: block;
@@ -45,7 +54,7 @@
     border-radius: 25%;
     padding: 10px;
     color: #333333;
-    font-size: 16px;
+    font-size: 20px;
     font-family: Montserrat;
     font-weight: 500;
     word-wrap: break-word;
@@ -71,44 +80,85 @@
     transition: transform 0.1s, background-color 0.3s;
 }
 
-.group-86 {
-    width: 138px;
-    height: 62.09px;
-    position: fixed;
-    z-index: 1;
-    left: 10%;
-    top: 3%;
-}
-
-@media (max-width: 768px) {
-    .menu-btn {
-        display: block;
-    }
-
-    .nav-menu {
-        display: none;
-        position: relative;
-    }
-
-    .nav-menu.active {
-        display: block;
-    }
-
-    .nav-ul {
-        flex-direction: column;
-    }
-}
-
-@media only screen and (max-width: 1920px) {
-}
-
 @media only screen and (max-width: 1440px) {
+    .group-86 {
+        left: 8%;
+    }
+    .nav-ul {
+        margin-left: 10%;
+        gap: 10px;
+    }
+
+    .nav-li__title {
+        font-size: 18px;
+    }
 }
 
 @media only screen and (max-width: 1024px) {
+    .group-86 {
+        width: 118px;
+        height: 55px;
+        top: 18px;
+        left: 3%;
+    }
+    .nav-ul {
+        margin-left: 10%;
+        gap: 0px;
+    }
+
+    .nav-li__title {
+        font-size: 15px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
+    .nav-bar {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+        position: fixed;
+        right: 2%;
+        top: 3%;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+    }
+    .nav-ul {
+        display: none;
+        /* need to make this work */
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    .nav-ul.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        position: absolute;
+        border-radius: 10%;
+        top: 50%;
+        padding: 20px 20px;
+        right: 0;
+        width: 22%;
+        backdrop-filter: blur(15px);
+        background-color: rgba(229, 229, 229, 0.5);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        gap: 20px;
+        z-index: 2;
+    }
+
+    .nav-li__item {
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    .nav-menu.active .nav-ul {
+        display: flex;
+    }
+    .nav-bar.active {
+        display: block;
+    }
 }
 
 @media only screen and (max-width: 425px) {
@@ -119,57 +169,3 @@
 
 @media only screen and (max-width: 320px) {
 }
-
-/* @media only screen and (min-width: 2560px) {
-    .menu-btn {
-        right: 0%;
-        top: 2%;
-        height: 220px;
-        width: 220px;
-    }
-
-    .menu-nav__icons {
-        margin-bottom: 115px;
-    }
-    .icon {
-        width: 110px;
-        height: 110px;
-    }
-    .icon-title {
-        font-size: 2.2rem;
-    }
-}
-
-@media only screen and (max-width: 1024px) {
-    .menu-btn {
-        right: 0%;
-        top: 2%;
-        height: 110px;
-        width: 110px;
-    }
-    .icon {
-        width: 55px;
-        height: 55px;
-    }
-    .icon-title {
-        font-size: 0.9rem;
-    }
-}
-@media only screen and (max-width: 768px) {
-    .menu-nav__icons {
-        margin-right: 15px;
-    }
-    .icon-title {
-        font-size: 0.8rem;
-    }
-}
-@media only screen and (max-width: 426px) {
-    .menu-btn {
-        height: 100px;
-        width: 100px;
-        margin-bottom: 75px;
-    }
-    .nav {
-        width: 20vw;
-    }
-} */
