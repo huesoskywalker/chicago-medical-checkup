@@ -1,6 +1,6 @@
 .book-appointment {
     padding: 10px 14px;
-    position: absolute;
+    position: relative;
     display: inline-flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -21,6 +21,7 @@
 }
 
 .book-appointment.stats-container {
+    position: absolute;
     left: 44%;
     top: 85%;
     background: #ffd900;
@@ -29,7 +30,6 @@
 
 .book-appointment.faqs-container {
     margin-top: 60px;
-    left: 45%;
     background: #dd71c6;
 }
 

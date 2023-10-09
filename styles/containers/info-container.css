@@ -2,9 +2,8 @@
     width: 100%;
     max-width: 1920px;
     height: 760px;
-    left: 0px;
-    top: 0px;
     position: relative;
+    overflow: hidden;
 }
 
 .inner-1 {

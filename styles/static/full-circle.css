@@ -21,7 +21,7 @@
 
 .full-circle.faqs-container {
     width: 12%;
-    height: 28%;
+    height: 20%;
     right: 1%;
     top: 12%;
     border: 28px var(--COLOR-LIGHT-GRAY) solid;
@@ -29,8 +29,8 @@
 }
 
 .full-circle.contact-container {
-    width: 230px;
-    height: 230px;
+    width: 13%;
+    height: 48%;
     left: 1%;
     top: 30%;
     border: 28px var(--COLOR-LIGHT-GRAY) solid;
@@ -48,7 +48,13 @@
         height: 23%;
     }
     .full-circle.faqs-container {
-        height: 21%;
+        height: 18%;
+        border: 23px var(--COLOR-LIGHT-GRAY) solid;
+    }
+    .full-circle.contact-container {
+        width: 11%;
+        height: 33%;
+        top: 33%;
         border: 23px var(--COLOR-LIGHT-GRAY) solid;
     }
 }
@@ -65,8 +71,13 @@
         height: 16%;
     }
     .full-circle.faqs-container {
-        height: 15%;
+        height: 12%;
         right: -1%;
+        border: 18px var(--COLOR-LIGHT-GRAY) solid;
+    }
+    .full-circle.contact-container {
+        height: 27%;
+        left: -1%;
         border: 18px var(--COLOR-LIGHT-GRAY) solid;
     }
 }
