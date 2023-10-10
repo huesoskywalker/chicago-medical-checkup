@@ -1,5 +1,4 @@
 .full-circle {
-    z-index: 0;
     position: absolute;
     border-radius: 9999px;
     border: 28px var(--COLOR-WHITE) solid;
@@ -83,6 +82,13 @@
 }
 
 @media only screen and (max-width: 800px) {
+    .full-circle.info-container {
+        width: 30%;
+        top: 35%;
+        left: -15%;
+        border: 18px var(--COLOR-LIGHT-GRAY) solid;
+        opacity: 0.1;
+    }
 }
 
 @media only screen and (max-width: 425px) {

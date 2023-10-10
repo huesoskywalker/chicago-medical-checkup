@@ -1,9 +1,9 @@
 .container {
-    padding: 38px 38px;
-    right: 10%;
-    top: 27%;
-    width: 35%;
+    width: 100%;
     height: auto;
+    left: 100%;
+    top: 0;
+    padding: 38px 38px;
     position: absolute;
     background: linear-gradient(
         108deg,
@@ -12,11 +12,6 @@
     );
     border-radius: 50px;
     backdrop-filter: blur(67px);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    display: inline-flex;
     gap: 10px;
 }
 
@@ -77,6 +72,9 @@
     word-wrap: break-word;
 }
 @media only screen and (max-width: 1500px) {
+    .container {
+        margin-left: 5%;
+    }
     .inner-1 {
         gap: 40px;
     }
@@ -101,9 +99,6 @@
     }
 }
 @media only screen and (max-width: 1100px) {
-    .container {
-        right: 7%;
-    }
     .inner-1 {
         gap: 30px;
     }
@@ -129,6 +124,27 @@
 }
 
 @media only screen and (max-width: 800px) {
+    .container {
+        margin-left: 0;
+        position: relative;
+        width: 70%;
+        left: 0%;
+    }
+    .inner-1-title {
+        font-size: 15px;
+        line-height: 18px;
+    }
+    .inner-1-items {
+        gap: 10px;
+    }
+    .inner-2-title {
+        font-size: 13px;
+        line-height: 15px;
+    }
+    .inner-2-value {
+        font-size: 30px;
+        line-height: 50px;
+    }
 }
 
 @media only screen and (max-width: 425px) {

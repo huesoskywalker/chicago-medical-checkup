@@ -38,7 +38,7 @@ class NavMenu extends HTMLElement {
         super()
         this.attachShadow({ mode: "open" })
         this.menuData = menuData
-        this.initScrollHandler = this.initScroll.bind(this)
+        this.scrollHandler = this.initScroll.bind(this)
         this.toggleMenuHandler = this.toggleMenu.bind(this)
     }
     async loadContent() {
@@ -75,15 +75,11 @@ class NavMenu extends HTMLElement {
     initScroll() {
         const navBar = this.shadowRoot.querySelector(".nav-bar")
 
-        window.addEventListener("scroll", function () {
-            if (this.window.innerWidth > 768) {
-                if (window.scrollY > 100) {
-                    navBar.classList.add("scrolled")
-                } else {
-                    navBar.classList.remove("scrolled")
-                }
-            }
-        })
+        if (window.innerWidth > 768 && window.scrollY > 100) {
+            navBar.classList.add("scrolled")
+        } else {
+            navBar.classList.remove("scrolled")
+        }
     }
     toggleMenu(burgerMenu) {
         burgerMenu.classList.toggle("active")
@@ -95,12 +91,15 @@ class NavMenu extends HTMLElement {
     async connectedCallback() {
         await this.loadContent()
         this.populateMenu()
-        this.shadowRoot.addEventListener("DOMContentLoaded", this.initScrollHandler())
+
+        window.addEventListener("scroll", () => this.scrollHandler())
+
         const burgerMenu = this.shadowRoot.querySelector(".menu-btn")
         burgerMenu.addEventListener("click", () => this.toggleMenuHandler(burgerMenu))
     }
     disconnectedCallback() {
-        this.shadowRoot.removeEventListener("DOMContentLoaded", this.initScrollHandler())
+        this.shadowRoot.removeEventListener("DOMContentLoaded", this.scrollHandler())
+        this.shadowRoot.removeEventListener("click", this.toggleMenuHandler())
     }
 }
 customElements.define("nav-menu", NavMenu)
