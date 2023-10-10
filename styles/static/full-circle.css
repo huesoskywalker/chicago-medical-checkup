@@ -29,7 +29,7 @@
 
 .full-circle.contact-container {
     width: 13%;
-    height: 48%;
+    height: 44%;
     left: 1%;
     top: 30%;
     border: 28px var(--COLOR-LIGHT-GRAY) solid;
@@ -67,10 +67,10 @@
         left: -7%;
     }
     .full-circle.stats-container {
-        height: 16%;
+        height: 18%;
     }
     .full-circle.faqs-container {
-        height: 12%;
+        height: 15%;
         right: -1%;
         border: 18px var(--COLOR-LIGHT-GRAY) solid;
     }
@@ -88,6 +88,19 @@
         left: -15%;
         border: 18px var(--COLOR-LIGHT-GRAY) solid;
         opacity: 0.1;
+    }
+    .full-circle.stats-container {
+        display: none;
+    }
+    .full-circle.faqs-container {
+        display: none;
+    }
+    .full-circle.contact-container {
+        width: 23%;
+        top: 25%;
+        left: 10%;
+        border: 18px var(--COLOR-WHITE) solid;
+        opacity: 0.7;
     }
 }
 

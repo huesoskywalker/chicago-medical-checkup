@@ -39,6 +39,7 @@ class NavMenu extends HTMLElement {
         this.attachShadow({ mode: "open" })
         this.menuData = menuData
         this.scrollHandler = this.initScroll.bind(this)
+        this.navBarScrolled = false
         this.toggleMenuHandler = this.toggleMenu.bind(this)
     }
     async loadContent() {
@@ -75,16 +76,22 @@ class NavMenu extends HTMLElement {
     initScroll() {
         const navBar = this.shadowRoot.querySelector(".nav-bar")
 
-        if (window.innerWidth > 768 && window.scrollY > 100) {
-            navBar.classList.add("scrolled")
-        } else {
-            navBar.classList.remove("scrolled")
+        if (window.innerWidth > 768) {
+            if (window.scrollY > 100 && !this.navBarScrolled) {
+                navBar.classList.add("scrolled")
+                this.navBarScrolled = true
+            } else if (window.scrollY === 0) {
+                navBar.classList.remove("scrolled")
+                this.navBarScrolled = false
+            }
         }
     }
     toggleMenu(burgerMenu) {
         burgerMenu.classList.toggle("active")
+
         const navMenu = this.shadowRoot.querySelector(".nav-bar")
         navMenu.classList.toggle("active")
+
         const navUl = this.shadowRoot.querySelector(".nav-ul")
         navUl.classList.toggle("active")
     }

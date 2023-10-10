@@ -47,6 +47,8 @@
     font-weight: 500;
     line-height: 27px;
     word-wrap: break-word;
+    margin-right: 10%;
+    margin-left: 1%;
 }
 
 .faq-dropdown {
@@ -131,6 +133,13 @@
 }
 
 @media only screen and (max-width: 800px) {
+    .faq-dropdown {
+        top: 10px;
+    }
+    .faq-dropdown img {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 @media only screen and (max-width: 425px) {

@@ -29,7 +29,6 @@
     border-radius: 20px;
     display: inline-flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 15px;
     margin: 10px;
@@ -44,8 +43,6 @@
 
 .inner-1-value-container {
     display: inline-flex;
-    justify-content: flex-end;
-    align-items: flex-start;
     gap: 13px;
 }
 
@@ -67,10 +64,10 @@
     margin-top: 15px;
     text-align: center;
     color: #333333;
-    font-size: 21px;
+    font-size: 23px;
     font-family: Montserrat;
     font-weight: 400;
-    line-height: 28.51px;
+    line-height: 28px;
     word-wrap: break-word;
 }
 
@@ -95,11 +92,14 @@
 }
 
 @media only screen and (max-width: 1100px) {
+    .container-2 {
+        height: 500px;
+    }
     .inner-1 {
         gap: 20px;
     }
     .inner-1-item-container {
-        height: 40%;
+        height: 45%;
         gap: 8px;
     }
     .inner-1-logo {
@@ -119,6 +119,20 @@
 }
 
 @media only screen and (max-width: 800px) {
+    .container-2 {
+        height: 450px;
+    }
+    .inner-1 {
+        gap: 10px;
+    }
+    .inner-1-item-container {
+        height: 50%;
+        gap: 0;
+    }
+    .inner-1-logo {
+        width: 25px;
+        height: 25px;
+    }
 }
 
 @media only screen and (max-width: 425px) {

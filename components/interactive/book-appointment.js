@@ -6,10 +6,10 @@ class BookAppointment extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ["id"]
+        return ["class"]
     }
     attributeChangedCallback(props, oldValue, newValue) {
-        if (props === "id") {
+        if (props === "class") {
             this.componentId = newValue
         }
     }
