@@ -58,6 +58,9 @@
 }
 
 @media only screen and (max-width: 400px) {
+    .book-appointment.stats-container {
+        top: 88%;
+    }
 }
 
 @media only screen and (max-width: 350px) {

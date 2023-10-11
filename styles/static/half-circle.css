@@ -123,7 +123,19 @@
 }
 
 @media only screen and (max-width: 400px) {
+    .half-circle.info-container {
+        height: 19%;
+    }
+    .half-circle.stats-container {
+        height: 19%;
+    }
 }
 
 @media only screen and (max-width: 350px) {
+    .half-circle.info-container {
+        height: 18%;
+    }
+    .half-circle.stats-container {
+        height: 17%;
+    }
 }

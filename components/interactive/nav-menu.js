@@ -41,6 +41,7 @@ class NavMenu extends HTMLElement {
         this.scrollHandler = this.initScroll.bind(this)
         this.navBarScrolled = false
         this.toggleMenuHandler = this.toggleMenu.bind(this)
+        this.buttonClass = undefined
     }
     async loadContent() {
         await Promise.all([
@@ -74,15 +75,52 @@ class NavMenu extends HTMLElement {
         })
     }
     initScroll() {
-        const navBar = this.shadowRoot.querySelector(".nav-bar")
+        const TABLET_WIDTH = 768
+        const INFO_CONTAINER_THRESHOLD = 730
+        const STATS_CONTAINER_THRESHOLD = 1300
+        const STATS_CONTAINER_CLASS = "stats-color-change"
+        const FAQS_CONTAINER_CLASS = "faqs-color-change"
 
-        if (window.innerWidth > 768) {
-            if (window.scrollY > 100 && !this.navBarScrolled) {
+        const navBar = this.shadowRoot.querySelector(".nav-bar")
+        const innerWidth = window.innerWidth
+        const largeDisplay = innerWidth > TABLET_WIDTH
+        const scrollY = window.scrollY
+        const isAtInfoContainer = scrollY <= INFO_CONTAINER_THRESHOLD
+        const isAtStatsContainer =
+            scrollY > INFO_CONTAINER_THRESHOLD && scrollY <= STATS_CONTAINER_THRESHOLD
+        const haveStatsContainerClass = this.buttonClass === STATS_CONTAINER_CLASS
+        const isAtFaqsContainer = scrollY > STATS_CONTAINER_THRESHOLD
+        const haveFaqsContainerClass = this.buttonClass === FAQS_CONTAINER_CLASS
+
+        if (largeDisplay) {
+            if (scrollY > 100 && !this.navBarScrolled) {
                 navBar.classList.add("scrolled")
                 this.navBarScrolled = true
-            } else if (window.scrollY === 0) {
+            } else if (scrollY === 0) {
                 navBar.classList.remove("scrolled")
                 this.navBarScrolled = false
+            } else {
+                return
+            }
+        } else {
+            const menuBtn = this.shadowRoot.getElementById("burger-menu")
+            if (isAtInfoContainer) {
+                menuBtn.classList.remove(STATS_CONTAINER_CLASS, FAQS_CONTAINER_CLASS)
+                this.buttonClass = undefined
+            } else if (isAtStatsContainer && !haveStatsContainerClass) {
+                if (haveFaqsContainerClass) {
+                    menuBtn.classList.remove(FAQS_CONTAINER_CLASS)
+                }
+                menuBtn.classList.add(STATS_CONTAINER_CLASS)
+                this.buttonClass = STATS_CONTAINER_CLASS
+            } else if (isAtFaqsContainer && !haveFaqsContainerClass) {
+                if (haveStatsContainerClass) {
+                    menuBtn.classList.remove(STATS_CONTAINER_CLASS)
+                }
+                menuBtn.classList.add(FAQS_CONTAINER_CLASS)
+                this.buttonClass = FAQS_CONTAINER_CLASS
+            } else {
+                return
             }
         }
     }

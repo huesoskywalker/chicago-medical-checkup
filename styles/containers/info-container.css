@@ -18,7 +18,7 @@
     align-items: baseline;
     justify-content: center;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     gap: 30px;
 }
 .inner-2 {
@@ -123,8 +123,18 @@
     }
 }
 
-@media only screen and (max-width: 400) {
+@media only screen and (max-width: 400px) {
+    .inner-1-text {
+        font-size: 35px;
+    }
+    .inner-1-description {
+        font-size: 17px;
+    }
 }
 
 @media only screen and (max-width: 350px) {
+    .inner-1-text {
+        font-size: 30px;
+        line-height: 45px;
+    }
 }

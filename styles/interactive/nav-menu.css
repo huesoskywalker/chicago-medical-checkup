@@ -1,6 +1,6 @@
 .menu-container {
     position: relative;
-    z-index: 2;
+    z-index: 3;
 }
 .menu-btn {
     z-index: 2;
@@ -11,7 +11,7 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    z-index: 1;
+    z-index: 2;
 }
 
 .nav-bar {
@@ -45,6 +45,7 @@
     margin: 0;
     padding: 0;
     gap: 20px;
+    z-index: 3;
 }
 .nav-li__item {
     display: block;
@@ -109,7 +110,6 @@
         width: 120px;
     }
     .nav-ul {
-        margin-left: 10%;
         gap: 0px;
     }
 
@@ -145,9 +145,9 @@
 
     .nav-ul {
         flex-direction: column;
-        align-items: start;
+        align-items: flex-start;
         position: fixed;
-        top: 8%;
+        top: 9%;
         right: 0;
         width: 22%;
         padding: 20px 20px;
@@ -167,13 +167,33 @@
         margin-top: 10px;
         font-size: 15px;
     }
+    .menu-btn img.stats-color-change {
+        filter: brightness(0) invert(1);
+    }
+    .menu-btn img.faqs-color-change {
+        filter: brightness(5) invert(1);
+    }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 450px) {
+    .menu-btn {
+        right: 3%;
+    }
+    .nav-ul {
+        width: 35%;
+        padding: 20px 10px;
+        border-radius: 5%;
+    }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 400px) {
+    .menu-btn {
+        right: 2%;
+    }
+    .nav-ul {
+        width: 40%;
+    }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 550px) {
 }

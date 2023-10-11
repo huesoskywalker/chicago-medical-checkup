@@ -244,7 +244,21 @@
 }
 
 @media only screen and (max-width: 400px) {
+    .inner-1 {
+        gap: 40px;
+    }
+    .inner-1-column,
+    .inner-1-column-2 {
+        gap: 35px;
+    }
 }
 
 @media only screen and (max-width: 350px) {
+    .inner-1 {
+        gap: 35px;
+    }
+    .inner-1-column,
+    .inner-1-column-2 {
+        gap: 30px;
+    }
 }

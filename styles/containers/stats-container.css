@@ -148,7 +148,17 @@
 }
 
 @media only screen and (max-width: 400px) {
+    .inner-1-item-container {
+        height: 43%;
+    }
 }
 
 @media only screen and (max-width: 350px) {
+    .inner-1 {
+        gap: 10px;
+    }
+    .inner-1-item-container {
+        height: 45%;
+        width: 40%;
+    }
 }
