@@ -18,7 +18,7 @@
     font-size: 32px;
     font-family: Libre Baskerville;
     font-weight: 400;
-    line-height: 51.2px;
+    line-height: 51px;
     word-wrap: break-word;
     margin: 5%;
 }
@@ -34,7 +34,7 @@
     width: 100%;
     padding: 2%;
     background: #f9f9f9;
-    border-radius: 20px;
+    border-radius: 15px;
     position: relative;
     overflow: hidden;
     transition: box-shadow 0.1s ease-in-out;
@@ -76,7 +76,7 @@
     font-size: 22px;
     color: #555555;
     background-color: #f0f0f0;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 .faq-container.active {
@@ -114,14 +114,16 @@
 
 @media only screen and (max-width: 1100px) {
     .container-3 {
-        height: 840px;
+        height: 830px;
     }
     .inner-1-faqs-container {
         width: 65%;
     }
     .faq-question {
-        font-size: 18px;
         line-height: 20px;
+    }
+    .faq-dropdown {
+        top: 12px;
     }
     .faq-dropdown img {
         width: 22px;
@@ -142,11 +144,30 @@
     }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 450px) {
+    .inner-1-title {
+        font-size: 27px;
+        line-height: 45px;
+    }
+    .faq-container {
+        border-radius: 10px;
+        padding: 3%;
+    }
+    .faq-question {
+        font-size: 16px;
+        margin-right: 14%;
+    }
+    .faq-dropdown {
+        top: 9px;
+    }
+    .faq-dropdown img {
+        width: 18px;
+        height: 18px;
+    }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 400px) {
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 350px) {
 }

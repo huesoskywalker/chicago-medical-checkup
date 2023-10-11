@@ -87,8 +87,8 @@
         height: 23%;
     }
     .half-circle.stats-container {
-        width: 20%;
         top: 50%;
+        width: 20%;
     }
     .half-circle.faqs-container {
         display: none;
@@ -104,14 +104,26 @@
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 450px) {
+    .half-circle.info-container {
+        top: 18%;
+        left: 58%;
+        width: 40%;
+    }
+    .half-circle.stats-container {
+        top: 32%;
+        height: 21%;
+        width: 30%;
+    }
+    .half-circle.contact-container {
+        height: 12%;
+        top: 46%;
+        right: -16%;
+    }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 400px) {
 }
 
-@media only screen and (max-width: 375px) {
-}
-
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 350px) {
 }

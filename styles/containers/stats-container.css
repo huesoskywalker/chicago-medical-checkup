@@ -15,14 +15,15 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 70px;
     padding: 20px;
     border-radius: 20px;
+    margin-bottom: 5%;
 }
 
 .inner-1-item-container {
     width: 15%;
-    height: 50%;
+    height: 70%;
     padding: 15px;
     background: var(--COLOR-WHITE);
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.03);
@@ -30,8 +31,8 @@
     display: inline-flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     gap: 15px;
-    margin: 10px;
 }
 
 .inner-1-logo {
@@ -73,7 +74,7 @@
 
 @media only screen and (max-width: 1500px) {
     .inner-1-item-container {
-        height: 45%;
+        height: 50%;
     }
     .inner-1-logo {
         width: 47px;
@@ -92,14 +93,11 @@
 }
 
 @media only screen and (max-width: 1100px) {
-    .container-2 {
-        height: 500px;
-    }
     .inner-1 {
         gap: 20px;
     }
     .inner-1-item-container {
-        height: 45%;
+        height: 40%;
         gap: 8px;
     }
     .inner-1-logo {
@@ -119,27 +117,38 @@
 }
 
 @media only screen and (max-width: 800px) {
-    .container-2 {
-        height: 450px;
-    }
-    .inner-1 {
-        gap: 10px;
-    }
     .inner-1-item-container {
-        height: 50%;
+        height: 45%;
         gap: 0;
     }
     .inner-1-logo {
-        width: 25px;
-        height: 25px;
+        width: 35px;
+        height: 35px;
     }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 450px) {
+    .inner-1 {
+        margin-bottom: 20%;
+    }
+    .inner-1-item-container {
+        width: 37%;
+        height: 40%;
+        justify-content: center;
+        padding: 5px;
+    }
+    .inner-1-logo {
+        width: 30px;
+        height: 30px;
+    }
+    .inner-1-value {
+        font-size: 25px;
+        line-height: 40px;
+    }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 400px) {
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 350px) {
 }

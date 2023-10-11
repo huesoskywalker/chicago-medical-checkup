@@ -104,11 +104,24 @@
     }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 450px) {
+    .full-circle.info-container {
+        display: none;
+    }
+    .full-circle.stats-container {
+        display: block;
+        width: 17%;
+        height: 13%;
+        left: -13%;
+        top: 55%;
+    }
+    .full-circle.contact-container {
+        display: none;
+    }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 400px) {
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 350px) {
 }

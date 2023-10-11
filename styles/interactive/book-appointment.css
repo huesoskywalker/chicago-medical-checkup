@@ -48,11 +48,17 @@
 @media only screen and (max-width: 800px) {
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 450px) {
+    .book-appointment.faqs-container {
+        margin-top: 30px;
+    }
+    .book-appointment.stats-container {
+        left: 30%;
+    }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 400px) {
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 350px) {
 }

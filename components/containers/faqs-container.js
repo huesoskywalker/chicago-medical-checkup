@@ -90,18 +90,28 @@ class FaqsContainer extends HTMLElement {
         })
     }
     toggleDropdown(dropdown) {
-        if (this.faqMemoization) {
-            this.faqMemoization.classList.remove("active")
-        }
         const faqContainer = dropdown.closest(".faq-container")
-        if (this.faqMemoization === faqContainer) {
-            faqContainer.classList.remove("active")
-            this.faqMemoization = undefined
-        } else {
+        if (!this.faqMemoization) {
             faqContainer.classList.add("active")
             this.faqMemoization = faqContainer
+        } else {
+            this.faqMemoization.classList.remove("active")
+            if (faqContainer !== this.faqMemoization) {
+                const faqAnswer = this.faqMemoization.querySelector(".faq-answer")
+                faqAnswer.addEventListener(
+                    "transitionend",
+                    () => {
+                        faqContainer.classList.add("active")
+                    },
+                    { once: true }
+                )
+                this.faqMemoization = faqContainer
+            } else {
+                this.faqMemoization = undefined
+            }
         }
     }
+
     async connectedCallback() {
         await this.loadContent()
         this.renderFAQS()
