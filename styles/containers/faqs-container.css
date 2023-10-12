@@ -92,7 +92,7 @@
 .faq-container.active .faq-dropdown img {
     transform: rotate(180deg);
 }
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1480px) {
     .container-3 {
         height: 980px;
     }
@@ -112,7 +112,7 @@
     }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1050px) {
     .container-3 {
         height: 830px;
     }
@@ -134,7 +134,7 @@
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 780px) {
     .container-3 {
         height: 790px;
     }
@@ -150,7 +150,7 @@
     }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 440px) {
     .inner-1-title {
         font-size: 27px;
         line-height: 45px;
@@ -175,7 +175,7 @@
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 390px) {
     .inner-1-title {
         font-size: 25px;
     }
@@ -187,7 +187,7 @@
     }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 340px) {
     .inner-1-title {
         font-size: 22px;
     }

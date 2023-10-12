@@ -33,22 +33,25 @@
     background: #dd71c6;
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1480px) {
     .book-appointment-title {
         font-size: 17px;
     }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1050px) {
     .book-appointment-title {
         font-size: 15px;
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 780px) {
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 440px) {
+    .book-appointment.info-container {
+        margin-top: 3%;
+    }
     .book-appointment.faqs-container {
         margin-top: 30px;
     }
@@ -57,11 +60,11 @@
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 390px) {
     .book-appointment.stats-container {
         top: 88%;
     }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 340px) {
 }

@@ -3,7 +3,7 @@ class CountDown extends HTMLElement {
         super()
         this.attachShadow({ mode: "open" })
         this.countdownInterval
-        this.endDate = "October 31, 2023, 23:59:59"
+        this.endDate = "November 13, 2023, 23:59:59"
     }
 
     async loadContent() {

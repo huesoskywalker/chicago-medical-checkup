@@ -55,7 +55,7 @@
     word-wrap: break-word;
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1480px) {
     .inner-1 {
         margin-left: 12%;
     }
@@ -68,7 +68,7 @@
     }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1050px) {
     .inner-1 {
         gap: 20px;
     }
@@ -81,7 +81,7 @@
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 780px) {
     .inner-1 {
         margin-top: 5%;
         position: absolute;
@@ -108,14 +108,15 @@
     }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 440px) {
     .inner-1 {
-        margin-top: 15%;
         width: 100%;
         margin-left: 0;
         gap: 25px;
     }
     .inner-1-text {
+        font-size: 27px;
+        line-height: 45px;
         align-self: center;
     }
     .inner-1-description {
@@ -123,16 +124,13 @@
     }
 }
 
-@media only screen and (max-width: 400px) {
-    .inner-1-text {
-        font-size: 35px;
-    }
+@media only screen and (max-width: 390px) {
     .inner-1-description {
         font-size: 17px;
     }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 340px) {
     .inner-1-text {
         font-size: 30px;
         line-height: 45px;

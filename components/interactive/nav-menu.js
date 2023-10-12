@@ -39,7 +39,7 @@ class NavMenu extends HTMLElement {
         this.attachShadow({ mode: "open" })
         this.menuData = menuData
         this.scrollHandler = this.initScroll.bind(this)
-        this.navBarScrolled = false
+        this.isNavBarScrolled = false
         this.toggleMenuHandler = this.toggleMenu.bind(this)
         this.buttonClass = undefined
     }
@@ -81,24 +81,27 @@ class NavMenu extends HTMLElement {
         const STATS_CONTAINER_CLASS = "stats-color-change"
         const FAQS_CONTAINER_CLASS = "faqs-color-change"
 
-        const navBar = this.shadowRoot.querySelector(".nav-bar")
         const innerWidth = window.innerWidth
-        const largeDisplay = innerWidth > TABLET_WIDTH
+        const isLargeDisplay = innerWidth > TABLET_WIDTH
+
         const scrollY = window.scrollY
         const isAtInfoContainer = scrollY <= INFO_CONTAINER_THRESHOLD
         const isAtStatsContainer =
             scrollY > INFO_CONTAINER_THRESHOLD && scrollY <= STATS_CONTAINER_THRESHOLD
-        const haveStatsContainerClass = this.buttonClass === STATS_CONTAINER_CLASS
         const isAtFaqsContainer = scrollY > STATS_CONTAINER_THRESHOLD
+
+        const haveStatsContainerClass = this.buttonClass === STATS_CONTAINER_CLASS
         const haveFaqsContainerClass = this.buttonClass === FAQS_CONTAINER_CLASS
 
-        if (largeDisplay) {
-            if (scrollY > 100 && !this.navBarScrolled) {
+        const navBar = this.shadowRoot.querySelector(".nav-bar")
+
+        if (isLargeDisplay) {
+            if (scrollY > 100 && !this.isNavBarScrolled) {
                 navBar.classList.add("scrolled")
-                this.navBarScrolled = true
+                this.isNavBarScrolled = true
             } else if (scrollY === 0) {
                 navBar.classList.remove("scrolled")
-                this.navBarScrolled = false
+                this.isNavBarScrolled = false
             } else {
                 return
             }
