@@ -58,21 +58,31 @@ class NavMenu extends HTMLElement {
         })
     }
     populateMenu() {
-        const ul = this.shadowRoot.querySelector(".nav-ul")
-        this.menuData.forEach((item) => {
-            const li = document.createElement("li")
-            li.classList.add("nav-li__item")
-            const anchor = document.createElement("a")
-            anchor.classList.add("nav-li__anchor")
-            anchor.href = item.link
-            const span = document.createElement("span")
-            span.classList.add("nav-li__title")
-            span.textContent = item.title
+        const navBar = this.shadowRoot.getElementById("navBar")
 
-            anchor.appendChild(span)
-            li.appendChild(anchor)
-            ul.appendChild(li)
+        const navMenu = document.createElement("ul")
+        navMenu.classList.add("nav-ul")
+
+        const fragment = new DocumentFragment()
+
+        this.menuData.forEach((item) => {
+            const listItem = document.createElement("li")
+            listItem.classList.add("nav-li__item")
+
+            const itemLink = document.createElement("a")
+            itemLink.classList.add("nav-li__link")
+            itemLink.href = item.link
+            listItem.appendChild(itemLink)
+
+            const itemTitle = document.createElement("span")
+            itemTitle.classList.add("nav-li__title")
+            itemTitle.textContent = item.title
+            itemLink.appendChild(itemTitle)
+
+            fragment.appendChild(listItem)
         })
+        navMenu.appendChild(fragment)
+        navBar.appendChild(navMenu)
     }
     initScroll() {
         const TABLET_WIDTH = 768
@@ -106,21 +116,21 @@ class NavMenu extends HTMLElement {
                 return
             }
         } else {
-            const menuBtn = this.shadowRoot.getElementById("burger-menu")
+            const menuLines = this.shadowRoot.getElementById("menuLines")
             if (isAtInfoContainer) {
-                menuBtn.classList.remove(STATS_CONTAINER_CLASS, FAQS_CONTAINER_CLASS)
+                menuLines.classList.remove(STATS_CONTAINER_CLASS, FAQS_CONTAINER_CLASS)
                 this.buttonClass = undefined
             } else if (isAtStatsContainer && !haveStatsContainerClass) {
                 if (haveFaqsContainerClass) {
-                    menuBtn.classList.remove(FAQS_CONTAINER_CLASS)
+                    menuLines.classList.remove(FAQS_CONTAINER_CLASS)
                 }
-                menuBtn.classList.add(STATS_CONTAINER_CLASS)
+                menuLines.classList.add(STATS_CONTAINER_CLASS)
                 this.buttonClass = STATS_CONTAINER_CLASS
             } else if (isAtFaqsContainer && !haveFaqsContainerClass) {
                 if (haveStatsContainerClass) {
-                    menuBtn.classList.remove(STATS_CONTAINER_CLASS)
+                    menuLines.classList.remove(STATS_CONTAINER_CLASS)
                 }
-                menuBtn.classList.add(FAQS_CONTAINER_CLASS)
+                menuLines.classList.add(FAQS_CONTAINER_CLASS)
                 this.buttonClass = FAQS_CONTAINER_CLASS
             } else {
                 return
