@@ -116,6 +116,10 @@ class NavMenu extends HTMLElement {
                 return
             }
         } else {
+            if (this.isNavBarScrolled) {
+                navBar.classList.remove("scrolled")
+                this.isNavBarScrolled = false
+            }
             const menuLines = this.shadowRoot.getElementById("menuLines")
             if (isAtInfoContainer) {
                 menuLines.classList.remove(STATS_CONTAINER_CLASS, FAQS_CONTAINER_CLASS)
@@ -137,9 +141,7 @@ class NavMenu extends HTMLElement {
             }
         }
     }
-    toggleMenu(burgerMenu) {
-        burgerMenu.classList.toggle("active")
-
+    toggleMenu() {
         const navMenu = this.shadowRoot.querySelector(".nav-bar")
         navMenu.classList.toggle("active")
 
@@ -153,10 +155,10 @@ class NavMenu extends HTMLElement {
         window.addEventListener("scroll", () => this.scrollHandler())
 
         const burgerMenu = this.shadowRoot.querySelector(".menu-btn")
-        burgerMenu.addEventListener("click", () => this.toggleMenuHandler(burgerMenu))
+        burgerMenu.addEventListener("click", () => this.toggleMenuHandler())
     }
     disconnectedCallback() {
-        this.shadowRoot.removeEventListener("DOMContentLoaded", this.scrollHandler())
+        this.shadowRoot.removeEventListener("scroll", () => this.scrollHandler())
         this.shadowRoot.removeEventListener("click", this.toggleMenuHandler())
     }
 }

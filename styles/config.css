@@ -3,14 +3,9 @@
     --COLOR-WHITE: rgb(255, 255, 255);
     --COLOR-BLACK: rgb(0, 0, 0);
     --COLOR-LIGHT-GRAY: rgba(229, 229, 229, 0.5);
-    /* --COLOR-LIGHT-GRAY: rgb(172, 172, 172); */
     --COLOR-GRAY: rgb(127, 127, 127);
     --COLOR-DARK-GRAY: rgb(51, 51, 51);
-    /* --COLOR-RED: rgb(255, 0, 0); */
-    /* --COLOR-GREEN: rgb(0, 255, 0); */
-    /* --COLOR-LIGHT-BLUE: rgb(115, 195, 244); */
     --COLOR-LIGHT-BLUE: rgb(0, 131, 211);
-    /* --COLOR-BLUE: rgb(0, 0, 255); */
     --COLOR-YELLOW: rgb(255, 217, 0);
     --COLOR-PINK: rgb(221, 113, 198);
 }

@@ -58,39 +58,40 @@ class FaqsContainer extends HTMLElement {
         })
     }
     renderFAQS() {
-        const faqContainer = this.shadowRoot.querySelector(".inner-1-faqs-container")
+        const faqContainer = this.shadowRoot.getElementById("faqsContainer")
+
+        const fragment = new DocumentFragment()
 
         this.faqsData.forEach((faqEntry) => {
             const faqElement = document.createElement("div")
-            faqElement.classList.add("faq-container")
+            faqElement.classList.add("faqs-container__faq")
 
             const questionElement = document.createElement("div")
             questionElement.classList.add("faq-question")
             questionElement.textContent = faqEntry.question
+            faqElement.appendChild(questionElement)
 
             const buttonElement = document.createElement("button")
             buttonElement.classList.add("faq-dropdown")
+            faqElement.appendChild(buttonElement)
 
             const imgElement = document.createElement("img")
             imgElement.src = faqEntry.dropdownLogo
             imgElement.alt = "Faq Dropdown"
             imgElement.loading = "lazy"
+            buttonElement.appendChild(imgElement)
 
             const answerElement = document.createElement("div")
             answerElement.classList.add("faq-answer")
             answerElement.textContent = faqEntry.answer
-
-            buttonElement.appendChild(imgElement)
-
-            faqElement.appendChild(questionElement)
-            faqElement.appendChild(buttonElement)
             faqElement.appendChild(answerElement)
 
-            faqContainer.appendChild(faqElement)
+            fragment.appendChild(faqElement)
         })
+        faqContainer.appendChild(fragment)
     }
     toggleDropdown(dropdown) {
-        const faqContainer = dropdown.closest(".faq-container")
+        const faqContainer = dropdown.closest(".faqs-container__faq")
         if (!this.faqMemoization) {
             faqContainer.classList.add("active")
             this.faqMemoization = faqContainer

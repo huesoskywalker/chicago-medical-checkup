@@ -6,29 +6,30 @@
     border: 28px var(--COLOR-WHITE) solid;
 }
 
-.half-circle.info-container {
+.half-circle.info-component {
     width: 50%;
     height: 60%;
     left: 90%;
     top: 15%;
 }
 
-.half-circle.stats-container {
+.half-circle.stats-component {
     width: 15%;
     height: 50%;
     right: -10%;
     top: 15%;
 }
 
-.half-circle.faqs-container {
+.half-circle.faqs-component {
     width: 23%;
     height: 40%;
     left: -10%;
     top: 27%;
     border: 28px var(--COLOR-LIGHT-GRAY) solid;
+    opacity: 0.7;
 }
 
-.half-circle.contact-container {
+.half-circle.contact-component {
     width: 20%;
     height: 60%;
     right: -12%;
@@ -39,19 +40,19 @@
     .half-circle {
         border: 23px var(--COLOR-WHITE) solid;
     }
-    .half-circle.info-container {
+    .half-circle.info-component {
         height: 50%;
     }
-    .half-circle.stats-container {
+    .half-circle.stats-component {
         top: 20%;
         height: 38%;
     }
-    .half-circle.faqs-container {
+    .half-circle.faqs-component {
         height: 35%;
         left: -12%;
         border: 23px var(--COLOR-LIGHT-GRAY) solid;
     }
-    .half-circle.contact-container {
+    .half-circle.contact-component {
         height: 50%;
         right: -14%;
         border: 23px var(--COLOR-LIGHT-GRAY) solid;
@@ -62,17 +63,17 @@
     .half-circle {
         border: 18px var(--COLOR-WHITE) solid;
     }
-    .half-circle.info-container {
+    .half-circle.info-component {
         top: 20%;
         left: 92%;
         height: 40%;
     }
-    .half-circle.stats-container {
+    .half-circle.stats-component {
         right: -12%;
         top: 23%;
         height: 28%;
     }
-    .half-circle.faqs-container {
+    .half-circle.faqs-component {
         width: 20%;
         height: 25%;
         border: 18px var(--COLOR-LIGHT-GRAY) solid;
@@ -80,20 +81,20 @@
 }
 
 @media only screen and (max-width: 780px) {
-    .half-circle.info-container {
+    .half-circle.info-component {
         top: 10%;
         left: 72%;
-        width: 25%;
+        width: 23%;
         height: 23%;
     }
-    .half-circle.stats-container {
+    .half-circle.stats-component {
         top: 50%;
         width: 20%;
     }
-    .half-circle.faqs-container {
+    .half-circle.faqs-component {
         display: none;
     }
-    .half-circle.contact-container {
+    .half-circle.contact-component {
         width: 33%;
         height: 40%;
         border: 18px var(--COLOR-WHITE) solid;
@@ -105,17 +106,17 @@
 }
 
 @media only screen and (max-width: 440px) {
-    .half-circle.info-container {
+    .half-circle.info-component {
         top: 18%;
         left: 58%;
         width: 40%;
     }
-    .half-circle.stats-container {
+    .half-circle.stats-component {
         top: 32%;
         height: 21%;
         width: 30%;
     }
-    .half-circle.contact-container {
+    .half-circle.contact-component {
         height: 12%;
         top: 46%;
         right: -16%;
@@ -123,19 +124,19 @@
 }
 
 @media only screen and (max-width: 390px) {
-    .half-circle.info-container {
+    .half-circle.info-component {
         height: 19%;
     }
-    .half-circle.stats-container {
+    .half-circle.stats-component {
         height: 19%;
     }
 }
 
 @media only screen and (max-width: 340px) {
-    .half-circle.info-container {
+    .half-circle.info-component {
         height: 18%;
     }
-    .half-circle.stats-container {
+    .half-circle.stats-component {
         height: 17%;
     }
 }

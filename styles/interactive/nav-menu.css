@@ -23,7 +23,7 @@
 .hamburger-lines {
     width: 100%;
     height: auto;
-    gap: 8px;
+    gap: 9px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -31,7 +31,7 @@
 
 .line {
     display: block;
-    height: 5px;
+    height: 4px;
     width: 100%;
     border-radius: 10px;
 }
@@ -239,7 +239,7 @@
     }
 
     .line {
-        height: 4px;
+        height: 3px;
     }
     .menu-btn {
         right: 3%;
@@ -262,9 +262,7 @@
         width: 9vw;
         right: 2%;
     }
-    .hamburger-lines {
-        gap: 7px;
-    }
+
     .nav-ul.active {
         width: 45%;
         gap: 15px;
@@ -273,6 +271,6 @@
 
 @media only screen and (max-width: 340px) {
     .hamburger-lines {
-        gap: 6px;
+        gap: 7px;
     }
 }

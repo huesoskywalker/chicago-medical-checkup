@@ -13,7 +13,7 @@
     align-items: center;
 }
 
-.inner-1-title {
+.inner-1__title {
     color: #333333;
     font-size: 32px;
     font-family: Libre Baskerville;
@@ -23,14 +23,14 @@
     margin: 5%;
 }
 
-.inner-1-faqs-container {
+.inner-1__faqs-container {
     width: 60%;
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-.faq-container {
+.faqs-container__faq {
     width: 100%;
     padding: 2%;
     background: #f9f9f9;
@@ -79,17 +79,17 @@
     border-radius: 15px;
 }
 
-.faq-container.active {
+.faqs-container__faq.active {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.faq-container.active .faq-answer {
+.faqs-container__faq.active .faq-answer {
     max-height: 10%;
     padding: 10px 15px;
     margin-top: 1%;
 }
 
-.faq-container.active .faq-dropdown img {
+.faqs-container__faq.active .faq-dropdown img {
     transform: rotate(180deg);
 }
 @media only screen and (max-width: 1480px) {
@@ -116,7 +116,7 @@
     .container-3 {
         height: 830px;
     }
-    .inner-1-faqs-container {
+    .inner-1__faqs-container {
         width: 65%;
     }
     .faq-question {
@@ -130,6 +130,7 @@
         height: 22px;
     }
     .faq-answer {
+        width: 85%;
         font-size: 18px;
     }
 }
@@ -138,7 +139,7 @@
     .container-3 {
         height: 790px;
     }
-    .inner-1-faqs-container {
+    .inner-1__faqs-container {
         gap: 20px;
     }
     .faq-dropdown {
@@ -151,11 +152,11 @@
 }
 
 @media only screen and (max-width: 440px) {
-    .inner-1-title {
+    .inner-1__title {
         font-size: 27px;
         line-height: 45px;
     }
-    .faq-container {
+    .faqs-container__faq {
         border-radius: 10px;
         padding: 3%;
     }
@@ -171,27 +172,29 @@
         height: 18px;
     }
     .faq-answer {
+        width: 80%;
         font-size: 17px;
     }
 }
 
 @media only screen and (max-width: 390px) {
-    .inner-1-title {
+    .inner-1__title {
         font-size: 25px;
     }
     .faq-dropdown {
         top: 8px;
     }
     .faq-answer {
+        width: 77%;
         font-size: 16px;
     }
 }
 
 @media only screen and (max-width: 340px) {
-    .inner-1-title {
+    .inner-1__title {
         font-size: 22px;
     }
-    .inner-1-faqs-container {
+    .inner-1__faqs-container {
         gap: 15px;
     }
 }

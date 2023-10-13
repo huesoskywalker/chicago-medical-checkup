@@ -1,9 +1,16 @@
+const responsiveSpan = {
+    prefix: "Only",
+    value: "11",
+    suffix: "spots available!",
+}
+
 class InfoContainer extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({ mode: "open" })
         this.resizeHandler = this.handleResize.bind(this)
         this.contentRendered = false
+        this.responsiveSpan = responsiveSpan
     }
     async loadContent() {
         await Promise.all([
@@ -20,30 +27,35 @@ class InfoContainer extends HTMLElement {
         })
     }
     renderResponsiveContent() {
-        const textElement = this.shadowRoot.querySelector(".inner-1-text")
+        const textElement = this.shadowRoot.getElementById("innerText")
+
+        const fragment = new DocumentFragment()
 
         const textContainer = document.createElement("div")
-        textContainer.classList.add("inner-1-text-2")
+        textContainer.id = "responsiveText"
+        textContainer.classList.add("inner-1__responsive-text")
 
         const prefixSpan = document.createElement("span")
-        prefixSpan.textContent = "Only"
-        textContainer.appendChild(prefixSpan)
+        prefixSpan.textContent = this.responsiveSpan.prefix
+        fragment.appendChild(prefixSpan)
 
-        const freeSpan = document.createElement("span")
-        freeSpan.classList.add("free-span")
-        freeSpan.textContent = "11"
-        textContainer.appendChild(freeSpan)
+        const valueSpan = document.createElement("span")
+        valueSpan.classList.add("value-span")
+        valueSpan.textContent = this.responsiveSpan.value
+        fragment.appendChild(valueSpan)
 
         const suffixSpan = document.createElement("span")
-        suffixSpan.textContent = "spots available!"
-        textContainer.appendChild(suffixSpan)
+        suffixSpan.textContent = this.responsiveSpan.suffix
+        fragment.appendChild(suffixSpan)
+
+        textContainer.appendChild(fragment)
 
         textElement.parentNode.insertBefore(textContainer, textElement.nextSibling)
 
         this.contentRendered = true
     }
     removeResponsiveContent() {
-        const responsiveContainer = this.shadowRoot.querySelector(".inner-1-text-2")
+        const responsiveContainer = this.shadowRoot.getElementById("responsiveText")
         responsiveContainer.parentNode.removeChild(responsiveContainer)
 
         this.contentRendered = false

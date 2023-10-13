@@ -1,4 +1,4 @@
-.container-4 {
+.container {
     width: 100%;
     max-width: 1920px;
     height: auto;
@@ -17,27 +17,28 @@
     gap: 50px;
 }
 
-.inner-1-column {
+.inner-1__column-1,
+.inner-1__column-2 {
     display: flex;
     flex-direction: column;
     text-align: start;
     z-index: 1;
     gap: 30px;
 }
-.inner-1-column-2 {
+.column-2__subcolumn {
     display: flex;
     justify-content: center;
     text-align: start;
     gap: 50px;
 }
-.chicago-logo {
+.column-1__chicago-logo {
     width: 50%;
 }
-.chicago-logo img {
+.column-1__chicago-logo img {
     width: 180px;
     height: auto;
 }
-.description {
+.column-1__description {
     max-width: 800px;
     color: #333333;
     font-size: 25px;
@@ -46,7 +47,7 @@
     line-height: 27px;
     word-wrap: break-word;
 }
-.contact-info {
+.column-1__contact-info {
     margin-top: 10px;
     display: flex;
     justify-content: flex-start;
@@ -57,13 +58,13 @@
     word-wrap: break-word;
 }
 
-.contact-info span {
+.column-1__contact-info span {
     font-weight: 600;
     color: black;
 }
 
-.links-header,
-.link {
+.column-2-sub__column-2-sub__header,
+.column-2-sub__link {
     width: 100%;
     position: relative;
     color: #333333;
@@ -71,14 +72,14 @@
     word-wrap: break-word;
 }
 
-.links-header {
+.column-2-sub__column-2-sub__header {
     font-size: 28px;
     font-weight: 500;
     line-height: 38px;
     margin-bottom: 20px;
 }
 
-.link {
+.column-2-sub__link {
     font-size: 22px;
     font-weight: 400;
     line-height: 25px;
@@ -93,19 +94,19 @@
     margin: 3% 0;
 }
 
-.contact-logo {
+.column-1__contact-info img {
     width: 30px;
     height: auto;
 }
 
-.social-network-logos {
+.inner-2_logos {
     position: relative;
 }
-.social-network-logos img {
+.inner-2_logos img {
     width: 162px;
     height: auto;
 }
-.copyright {
+.inner-2__copyright {
     z-index: 1;
     position: relative;
     font-size: 19px;
@@ -116,42 +117,43 @@
     .inner-1 {
         gap: 40px;
     }
-    .inner-1-column {
+    .inner-1__column-1,
+    .inner-1__column-2 {
         gap: 20px;
     }
-    .inner-1-column-2 {
+    .column-2__subcolumn {
         gap: 30px;
     }
-    .chicago-logo img {
+    .column-1__chicago-logo img {
         width: 160px;
     }
-    .description {
+    .column-1__description {
         max-width: 600px;
         font-size: 18px;
         line-height: 23px;
     }
-    .contact-info {
+    .column-1__contact-info {
         font-size: 18px;
         line-height: 20px;
     }
-    .links-header {
+    .column-2-sub__column-2-sub__header {
         font-size: 20px;
         line-height: 20px;
     }
-    .link {
+    .column-2-sub__link {
         font-size: 16px;
         line-height: 22px;
     }
     .inner-2 {
         gap: 40px;
     }
-    .contact-logo {
+    .column-1__contact-info img {
         width: 22px;
     }
-    .social-network-logos img {
+    .inner-2_logos img {
         width: 122px;
     }
-    .copyright {
+    .inner-2__copyright {
         font-size: 16px;
         line-height: 20px;
     }
@@ -161,38 +163,39 @@
     .inner-1 {
         gap: 30px;
     }
-    .inner-1-column {
+    .inner-1__column-1,
+    .inner-1__column-2 {
         gap: 15px;
     }
-    .inner-1-column-2 {
+    .column-2__subcolumn {
         gap: 20px;
     }
-    .chicago-logo img {
+    .column-1__chicago-logo img {
         width: 130px;
     }
-    .description {
+    .column-1__description {
         max-width: 400px;
         font-size: 17px;
         line-height: 20px;
     }
-    .contact-info {
+    .column-1__contact-info {
         font-size: 16px;
         line-height: 18px;
     }
 
-    .link {
+    .column-2-sub__link {
         line-height: 18px;
     }
     .inner-2 {
         gap: 30px;
     }
-    .contact-logo {
+    .column-1__contact-info img {
         width: 20px;
     }
-    .social-network-logos img {
+    .inner-2_logos img {
         width: 112px;
     }
-    .copyright {
+    .inner-2__copyright {
         font-size: 15px;
         line-height: 18px;
     }
@@ -204,7 +207,7 @@
         align-items: flex-start;
         padding-left: 8%;
     }
-    .inner-1-column-2 {
+    .column-2__subcolumn {
         gap: 10px;
     }
 }
@@ -215,22 +218,27 @@
         padding-left: 5%;
         gap: 50px;
     }
-    .inner-1-column {
+    .inner-1__column-1,
+    .inner-1__column-2 {
         gap: 50px;
     }
-    .contact-logo {
+    .column-1__contact-info img {
         width: 18px;
         height: 28px;
     }
-    .contact-info div {
+    .column-1__contact-info div {
         display: flex;
         flex-direction: column;
         margin-left: 2%;
     }
-    .inner-1-column-2 {
+    .column-2__subcolumn {
         flex-direction: column;
         gap: 50px;
     }
+    .column-2-sub__link {
+        line-height: 28px;
+    }
+
     .inner-2 {
         width: 75%;
         flex-direction: column;
@@ -238,17 +246,15 @@
         gap: 15px;
         margin: 5% 0;
     }
-    .link {
-        line-height: 28px;
-    }
 }
 
 @media only screen and (max-width: 390px) {
     .inner-1 {
         gap: 40px;
     }
-    .inner-1-column,
-    .inner-1-column-2 {
+    .inner-1__column-1,
+    .inner-1__column-2,
+    .column-2__subcolumn {
         gap: 35px;
     }
 }
@@ -257,8 +263,9 @@
     .inner-1 {
         gap: 35px;
     }
-    .inner-1-column,
-    .inner-1-column-2 {
+    .inner-1__column-1,
+    .inner-1__column-2,
+    .column-2__subcolumn {
         gap: 30px;
     }
 }

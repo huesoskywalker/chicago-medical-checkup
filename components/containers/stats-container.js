@@ -59,40 +59,44 @@ class StatsContainer extends HTMLElement {
         })
     }
     renderStats() {
-        const mainContainer = this.shadowRoot.querySelector(".inner-1")
+        const mainContainer = this.shadowRoot.getElementById("innerContainer")
+
+        const fragment = new DocumentFragment()
+
         this.statsData.forEach((stat) => {
             const itemContainer = document.createElement("div")
-            itemContainer.classList.add("inner-1-item-container")
+            itemContainer.classList.add("inner-1__item")
 
             const logoImg = document.createElement("img")
             logoImg.src = stat.logo.src
             logoImg.alt = stat.logo.alt
             logoImg.loading = "lazy"
-            logoImg.classList.add("inner-1-logo")
+            logoImg.classList.add("item__logo")
             itemContainer.appendChild(logoImg)
 
-            const valueContainer = document.createElement("div")
-            valueContainer.classList.add("inner-1-value-container")
+            const statsContainer = document.createElement("div")
+            statsContainer.classList.add("item__stats-container")
 
             const value = document.createElement("div")
-            value.classList.add("inner-1-value")
+            value.classList.add("stats-container__value")
             value.textContent = stat.value
-            valueContainer.appendChild(value)
+            statsContainer.appendChild(value)
 
             const symbol = document.createElement("div")
-            symbol.classList.add("inner-1-value", "symbol")
+            symbol.classList.add("stats-container__symbol")
             symbol.textContent = stat.symbol
-            valueContainer.appendChild(symbol)
+            statsContainer.appendChild(symbol)
 
             const descriptionContainer = document.createElement("div")
-            descriptionContainer.classList.add("inner-1-description")
+            descriptionContainer.classList.add("item__description")
             descriptionContainer.textContent = stat.description
 
-            itemContainer.appendChild(valueContainer)
+            itemContainer.appendChild(statsContainer)
             itemContainer.appendChild(descriptionContainer)
 
-            mainContainer.appendChild(itemContainer)
+            fragment.appendChild(itemContainer)
         })
+        mainContainer.appendChild(fragment)
     }
     async connectedCallback() {
         await this.loadContent()

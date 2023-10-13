@@ -30,7 +30,7 @@ class BookAppointment extends HTMLElement {
         })
     }
     addClass(value) {
-        const appointmentContainer = this.shadowRoot.querySelector(".book-appointment")
+        const appointmentContainer = this.shadowRoot.getElementById("bookAppointment")
         appointmentContainer.classList.add(value)
     }
     async connectedCallback() {

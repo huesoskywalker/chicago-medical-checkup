@@ -2,7 +2,7 @@ class FullCircle extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({ mode: "open" })
-        this.componentId = undefined
+        this.componentClass = undefined
     }
 
     static get observedAttributes() {
@@ -10,7 +10,7 @@ class FullCircle extends HTMLElement {
     }
     attributeChangedCallback(props, oldValue, newValue) {
         if (props === "class") {
-            this.componentId = newValue
+            this.componentClass = newValue
         }
     }
 
@@ -34,8 +34,8 @@ class FullCircle extends HTMLElement {
     }
     async connectedCallback() {
         await this.loadContent()
-        if (this.componentId) {
-            this.addClass(this.componentId)
+        if (this.componentClass) {
+            this.addClass(this.componentClass)
         }
     }
 }

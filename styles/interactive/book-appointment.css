@@ -1,4 +1,4 @@
-.book-appointment {
+.container {
     padding: 10px 14px;
     position: relative;
     display: inline-flex;
@@ -6,7 +6,7 @@
     align-items: flex-start;
     gap: 10px;
 }
-.book-appointment-title {
+.title {
     text-align: center;
     color: var(--COLOR-WHITE);
     font-size: 22px;
@@ -15,53 +15,56 @@
     word-wrap: break-word;
 }
 
-.book-appointment.info-container {
+.info-component {
     margin-top: 10%;
-    background: #dd71c6;
+    background: var(--COLOR-PINK);
 }
 
-.book-appointment.stats-container {
+.stats-component {
     position: absolute;
     left: 44%;
     top: 85%;
-    background: #ffd900;
+    background: var(--COLOR-YELLOW);
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.book-appointment.faqs-container {
+.faqs-component {
     margin-top: 60px;
-    background: #dd71c6;
+    background: var(--COLOR-PINK);
 }
 
 @media only screen and (max-width: 1480px) {
-    .book-appointment-title {
+    .title {
         font-size: 17px;
     }
 }
 
 @media only screen and (max-width: 1050px) {
-    .book-appointment-title {
+    .title {
         font-size: 15px;
     }
 }
 
 @media only screen and (max-width: 780px) {
+    .stats-component {
+        left: 38%;
+    }
 }
 
 @media only screen and (max-width: 440px) {
-    .book-appointment.info-container {
+    .info-component {
         margin-top: 3%;
     }
-    .book-appointment.faqs-container {
+    .faqs-component {
         margin-top: 30px;
     }
-    .book-appointment.stats-container {
+    .stats-component {
         left: 30%;
     }
 }
 
 @media only screen and (max-width: 390px) {
-    .book-appointment.stats-container {
+    .stats-component {
         top: 88%;
     }
 }

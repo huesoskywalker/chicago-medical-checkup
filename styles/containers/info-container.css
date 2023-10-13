@@ -1,4 +1,4 @@
-.container-1 {
+.container {
     width: 100%;
     max-width: 1920px;
     height: 760px;
@@ -7,6 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: var(--COLOR-WHITE);
 }
 
 .inner-1 {
@@ -29,7 +30,7 @@
     border-top-left-radius: 50px;
 }
 
-.inner-1-text {
+.inner-1__text {
     color: #333333;
     font-size: 55px;
     font-family: Libre Baskerville;
@@ -39,12 +40,13 @@
     position: relative;
 }
 
-.free-span {
+.free-span,
+.value-span {
     color: #dd71c6;
     padding: 0 2px;
 }
 
-.inner-1-description {
+.inner-1__description {
     width: 90%;
     position: relative;
     color: #333333;
@@ -59,11 +61,11 @@
     .inner-1 {
         margin-left: 12%;
     }
-    .inner-1-text {
+    .inner-1__text {
         font-size: 45px;
         line-height: 55px;
     }
-    .inner-1-description {
+    .inner-1__description {
         font-size: 20px;
     }
 }
@@ -72,11 +74,11 @@
     .inner-1 {
         gap: 20px;
     }
-    .inner-1-text {
+    .inner-1__text {
         font-size: 30px;
         line-height: 50px;
     }
-    .inner-1-description {
+    .inner-1__description {
         font-size: 18px;
     }
 }
@@ -89,16 +91,16 @@
         align-items: center;
         gap: 30px;
     }
-    .inner-1-text {
+    .inner-1__text {
         align-self: flex-start;
         width: 70%;
         font-size: 40px;
     }
-    .inner-1-text-2 {
+    .inner-1__responsive-text {
         color: #333333;
         font-size: 20px;
     }
-    .inner-1-description {
+    .inner-1__description {
         align-self: flex-start;
         width: 65%;
     }
@@ -115,24 +117,24 @@
         margin-left: 0;
         gap: 25px;
     }
-    .inner-1-text {
+    .inner-1__text {
         font-size: 27px;
         line-height: 45px;
         align-self: center;
     }
-    .inner-1-description {
+    .inner-1__description {
         align-self: center;
     }
 }
 
 @media only screen and (max-width: 390px) {
-    .inner-1-description {
+    .inner-1__description {
         font-size: 17px;
     }
 }
 
 @media only screen and (max-width: 340px) {
-    .inner-1-text {
+    .inner-1__text {
         font-size: 30px;
         line-height: 45px;
     }
