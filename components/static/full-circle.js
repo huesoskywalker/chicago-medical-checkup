@@ -29,7 +29,7 @@ class FullCircle extends HTMLElement {
         })
     }
     addClass(value) {
-        const circleContainer = this.shadowRoot.querySelector(".full-circle")
+        const circleContainer = this.shadowRoot.getElementById("fullCircle")
         circleContainer.classList.add(value)
     }
     async connectedCallback() {

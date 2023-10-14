@@ -1,4 +1,4 @@
-const responsiveSpan = {
+const spotsData = {
     prefix: "Only",
     value: "11",
     suffix: "spots available!",
@@ -10,7 +10,8 @@ class InfoContainer extends HTMLElement {
         this.attachShadow({ mode: "open" })
         this.resizeHandler = this.handleResize.bind(this)
         this.contentRendered = false
-        this.responsiveSpan = responsiveSpan
+        this.responsiveText = undefined
+        this.spotsData = spotsData
     }
     async loadContent() {
         await Promise.all([
@@ -31,32 +32,30 @@ class InfoContainer extends HTMLElement {
 
         const fragment = new DocumentFragment()
 
-        const textContainer = document.createElement("div")
-        textContainer.id = "responsiveText"
-        textContainer.classList.add("inner-1__responsive-text")
+        this.responsiveContainer = document.createElement("div")
+        this.responsiveContainer.classList.add("inner-1__responsive-text")
 
         const prefixSpan = document.createElement("span")
-        prefixSpan.textContent = this.responsiveSpan.prefix
+        prefixSpan.textContent = this.spotsData.prefix
         fragment.appendChild(prefixSpan)
 
         const valueSpan = document.createElement("span")
         valueSpan.classList.add("value-span")
-        valueSpan.textContent = this.responsiveSpan.value
+        valueSpan.textContent = this.spotsData.value
         fragment.appendChild(valueSpan)
 
         const suffixSpan = document.createElement("span")
-        suffixSpan.textContent = this.responsiveSpan.suffix
+        suffixSpan.textContent = this.spotsData.suffix
         fragment.appendChild(suffixSpan)
 
-        textContainer.appendChild(fragment)
+        this.responsiveContainer.appendChild(fragment)
 
-        textElement.parentNode.insertBefore(textContainer, textElement.nextSibling)
+        textElement.parentNode.insertBefore(this.responsiveContainer, textElement.nextSibling)
 
         this.contentRendered = true
     }
     removeResponsiveContent() {
-        const responsiveContainer = this.shadowRoot.getElementById("responsiveText")
-        responsiveContainer.parentNode.removeChild(responsiveContainer)
+        this.responsiveContainer.parentNode.removeChild(this.responsiveContainer)
 
         this.contentRendered = false
     }

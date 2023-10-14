@@ -75,11 +75,11 @@ class FaqsContainer extends HTMLElement {
             buttonElement.classList.add("faq-dropdown")
             faqElement.appendChild(buttonElement)
 
-            const imgElement = document.createElement("img")
-            imgElement.src = faqEntry.dropdownLogo
-            imgElement.alt = "Faq Dropdown"
-            imgElement.loading = "lazy"
-            buttonElement.appendChild(imgElement)
+            const buttonImage = document.createElement("img")
+            buttonImage.src = faqEntry.dropdownLogo
+            buttonImage.alt = "Faq Dropdown"
+            buttonImage.loading = "lazy"
+            buttonElement.appendChild(buttonImage)
 
             const answerElement = document.createElement("div")
             answerElement.classList.add("faq-answer")

@@ -42,6 +42,9 @@ class NavMenu extends HTMLElement {
         this.isNavBarScrolled = false
         this.toggleMenuHandler = this.toggleMenu.bind(this)
         this.buttonClass = undefined
+        this.menuButton = undefined
+        this.navBar = undefined
+        this.navUl = undefined
     }
     async loadContent() {
         await Promise.all([
@@ -58,10 +61,10 @@ class NavMenu extends HTMLElement {
         })
     }
     populateMenu() {
-        const navBar = this.shadowRoot.getElementById("navBar")
+        this.navBar = this.shadowRoot.getElementById("navBar")
 
-        const navMenu = document.createElement("ul")
-        navMenu.classList.add("nav-ul")
+        this.navUl = document.createElement("ul")
+        this.navUl.classList.add("nav-ul")
 
         const fragment = new DocumentFragment()
 
@@ -81,8 +84,8 @@ class NavMenu extends HTMLElement {
 
             fragment.appendChild(listItem)
         })
-        navMenu.appendChild(fragment)
-        navBar.appendChild(navMenu)
+        this.navUl.appendChild(fragment)
+        this.navBar.appendChild(this.navUl)
     }
     initScroll() {
         const TABLET_WIDTH = 768
@@ -103,21 +106,19 @@ class NavMenu extends HTMLElement {
         const haveStatsContainerClass = this.buttonClass === STATS_CONTAINER_CLASS
         const haveFaqsContainerClass = this.buttonClass === FAQS_CONTAINER_CLASS
 
-        const navBar = this.shadowRoot.querySelector(".nav-bar")
-
         if (isLargeDisplay) {
             if (scrollY > 100 && !this.isNavBarScrolled) {
-                navBar.classList.add("scrolled")
+                this.navBar.classList.add("scrolled")
                 this.isNavBarScrolled = true
             } else if (scrollY === 0) {
-                navBar.classList.remove("scrolled")
+                this.navBar.classList.remove("scrolled")
                 this.isNavBarScrolled = false
             } else {
                 return
             }
         } else {
             if (this.isNavBarScrolled) {
-                navBar.classList.remove("scrolled")
+                this.navBar.classList.remove("scrolled")
                 this.isNavBarScrolled = false
             }
             const menuLines = this.shadowRoot.getElementById("menuLines")
@@ -136,17 +137,13 @@ class NavMenu extends HTMLElement {
                 }
                 menuLines.classList.add(FAQS_CONTAINER_CLASS)
                 this.buttonClass = FAQS_CONTAINER_CLASS
-            } else {
-                return
             }
         }
     }
     toggleMenu() {
-        const navMenu = this.shadowRoot.querySelector(".nav-bar")
-        navMenu.classList.toggle("active")
+        this.navBar.classList.toggle("active")
 
-        const navUl = this.shadowRoot.querySelector(".nav-ul")
-        navUl.classList.toggle("active")
+        this.navUl.classList.toggle("active")
     }
     async connectedCallback() {
         await this.loadContent()
@@ -154,12 +151,12 @@ class NavMenu extends HTMLElement {
 
         window.addEventListener("scroll", () => this.scrollHandler())
 
-        const burgerMenu = this.shadowRoot.querySelector(".menu-btn")
-        burgerMenu.addEventListener("click", () => this.toggleMenuHandler())
+        this.menuButton = this.shadowRoot.getElementById("menuBtn")
+        this.menuButton.addEventListener("click", () => this.toggleMenuHandler())
     }
     disconnectedCallback() {
-        this.shadowRoot.removeEventListener("scroll", () => this.scrollHandler())
-        this.shadowRoot.removeEventListener("click", this.toggleMenuHandler())
+        window.removeEventListener("scroll", () => this.scrollHandler())
+        this.menuButton.removeEventListener("click", this.toggleMenuHandler())
     }
 }
 customElements.define("nav-menu", NavMenu)

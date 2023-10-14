@@ -30,7 +30,7 @@ class HalfCircle extends HTMLElement {
     }
 
     addClass(value) {
-        const halfCircleContainer = this.shadowRoot.querySelector(".half-circle")
+        const halfCircleContainer = this.shadowRoot.getElementById("halfCircle")
         halfCircleContainer.classList.add(value)
     }
     async connectedCallback() {
