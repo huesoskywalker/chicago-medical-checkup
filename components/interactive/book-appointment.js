@@ -2,7 +2,7 @@ class BookAppointment extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({ mode: "open" })
-        this.componentClass = undefined
+        this.componentClass
     }
 
     static get observedAttributes() {

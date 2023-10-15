@@ -1,5 +1,3 @@
-@import "./config.css";
-
 body,
 html {
     margin: 0;
@@ -7,9 +5,15 @@ html {
     overflow-x: hidden;
 }
 
-.main-container {
-    overflow: hidden;
-    width: 100%;
-    max-width: 1920px;
-    height: auto;
+:root {
+    --COLOR-WHITE: rgb(255, 255, 255);
+    --COLOR-WHITE-BACKGROUND: rgb(221, 221, 221);
+    --COLOR-BLACK: rgb(0, 0, 0);
+    --COLOR-LIGHT-GRAY: rgba(229, 229, 229, 0.6);
+    --COLOR-GRAY: rgb(127, 127, 127);
+    --COLOR-DARK-GRAY: rgb(66, 66, 66);
+    --COLOR-LIGHT-BLUE: rgb(0, 131, 211);
+    --COLOR-YELLOW: rgb(255, 217, 0);
+    --COLOR-PINK: rgb(219, 112, 196);
+    --COLOR-VIOLET: rgb(155, 39, 120);
 }

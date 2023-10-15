@@ -31,7 +31,7 @@
 }
 
 .inner-1__text {
-    color: #333333;
+    color: var(--COLOR-DARK-GRAY);
     font-size: 55px;
     font-family: Libre Baskerville;
     font-weight: 400;
@@ -42,14 +42,14 @@
 
 .free-span,
 .value-span {
-    color: #dd71c6;
+    color: var(--COLOR-VIOLET);
     padding: 0 2px;
 }
 
 .inner-1__description {
     width: 90%;
     position: relative;
-    color: #333333;
+    color: var(--COLOR-DARK-GRAY);
     font-size: 25px;
     font-family: Montserrat;
     font-weight: 400;
@@ -85,7 +85,7 @@
 
 @media only screen and (max-width: 780px) {
     .inner-1 {
-        margin-top: 5%;
+        margin-top: 8%;
         position: absolute;
         width: 80%;
         align-items: center;
@@ -97,7 +97,7 @@
         font-size: 40px;
     }
     .inner-1__responsive-text {
-        color: #333333;
+        color: var(--COLOR-DARK-GRAY);
         font-size: 20px;
     }
     .inner-1__description {
@@ -112,7 +112,6 @@
 
 @media only screen and (max-width: 440px) {
     .inner-1 {
-        margin-top: 8%;
         width: 100%;
         margin-left: 0;
         gap: 25px;
@@ -134,8 +133,14 @@
 }
 
 @media only screen and (max-width: 340px) {
+    .inner-1 {
+        margin-top: 15%;
+    }
     .inner-1__text {
-        font-size: 30px;
-        line-height: 45px;
+        font-size: 25px;
+        line-height: 40px;
+    }
+    .inner-1__responsive-text {
+        font-size: 18px;
     }
 }

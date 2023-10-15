@@ -7,23 +7,35 @@
         <link rel="stylesheet" type="text/css" href="./styles/main.css" />
         <link rel="icon" type="image/png" href="./assets/chicago-medical.png" />
         <title>Chicago Medical</title>
+        <meta
+            name="description"
+            content="Chicago Medical: Your Trusted Healthcare Partner. Schedule appointments online for personalized medical care. Expert physicians, cutting-edge facilities, and a commitment to your well-being. Book your appointment now."
+        />
+        <meta name="theme-color" content="transparent" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="
+  script-src 'self' https://chicago-medical-checkup.vercel.app;
+  style-src 'self' https://chicago-medical-checkup.vercel.app;
+  img-src 'self' https://chicago-medical-checkup.vercel.app;
+"
+        />
+        <link rel="manifest" href="./manifest.json" />
     </head>
     <body>
-        <div class="main-container">
-            <nav-menu></nav-menu>
-            <info-container> </info-container>
-            <stats-container></stats-container>
-            <faqs-container></faqs-container>
-            <contact-container></contact-container>
-        </div>
-        <script type="module" src="/components/interactive/nav-menu.js"></script>
-        <script type="module" src="/components/containers/info-container.js"></script>
-        <script type="module" src="/components/interactive/count-down.js"></script>
-        <script type="module" src="/components/interactive/book-appointment.js"></script>
-        <script type="module" src="/components/containers/stats-container.js"></script>
-        <script type="module" src="/components/static/full-circle.js"></script>
-        <script type="module" src="/components//static/half-circle.js"></script>
-        <script type="module" src="/components/containers/faqs-container.js"></script>
-        <script type="module" src="/components/containers/contact-container.js"></script>
+        <nav-menu></nav-menu>
+        <info-container> </info-container>
+        <stats-container></stats-container>
+        <faqs-container></faqs-container>
+        <contact-container></contact-container>
+        <script type="module" src="/components/interactive/nav-menu.js" defer></script>
+        <script type="module" src="/components/containers/info-container.js" defer></script>
+        <script type="module" src="/components/interactive/count-down.js" defer></script>
+        <script type="module" src="/components/interactive/book-appointment.js" defer></script>
+        <script type="module" src="/components/containers/stats-container.js" defer></script>
+        <script type="module" src="/components/static/full-circle.js" defer></script>
+        <script type="module" src="/components//static/half-circle.js" defer></script>
+        <script type="module" src="/components/containers/faqs-container.js" defer></script>
+        <script type="module" src="/components/containers/contact-container.js" defer></script>
     </body>
 </html>

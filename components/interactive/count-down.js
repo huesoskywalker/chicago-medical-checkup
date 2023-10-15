@@ -1,10 +1,4 @@
-const countdownData = {
-    days: "00",
-    hours: "00",
-    minutes: "00",
-    seconds: "00",
-}
-
+import { countdownData } from "../../constants/interactive/countdown-data.js"
 class CountDown extends HTMLElement {
     constructor() {
         super()

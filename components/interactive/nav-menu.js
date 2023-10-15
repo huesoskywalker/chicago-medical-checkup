@@ -1,38 +1,4 @@
-const menuData = [
-    {
-        title: "About Us",
-        link: "aboutus.html",
-    },
-    {
-        title: "Book Online",
-        link: "book.html",
-    },
-    {
-        title: "Weight Loss Programs",
-        link: "programs.html",
-    },
-    {
-        title: "Real Patient Stories",
-        link: "stories.html",
-    },
-    {
-        title: "Location",
-        link: "locations.html",
-    },
-    {
-        title: "Blogs",
-        link: "blogs.html",
-    },
-    {
-        title: "Shop",
-        link: "shop.html",
-    },
-    {
-        title: "Subscriptions",
-        link: "subscriptions.html",
-    },
-]
-
+import { menuData } from "../../constants/interactive/menu-data.js"
 class NavMenu extends HTMLElement {
     constructor() {
         super()
@@ -41,10 +7,12 @@ class NavMenu extends HTMLElement {
         this.scrollHandler = this.initScroll.bind(this)
         this.isNavBarScrolled = false
         this.toggleMenuHandler = this.toggleMenu.bind(this)
-        this.buttonClass = undefined
-        this.menuButton = undefined
-        this.navBar = undefined
-        this.navUl = undefined
+        this.buttonClass
+        this.menuCheckbox
+        this.navBar
+        this.itemsTitle
+        this.menuLines
+        this.isColorChanged = false
     }
     async loadContent() {
         await Promise.all([
@@ -63,8 +31,9 @@ class NavMenu extends HTMLElement {
     populateMenu() {
         this.navBar = this.shadowRoot.getElementById("navBar")
 
-        this.navUl = document.createElement("ul")
-        this.navUl.classList.add("nav-ul")
+        const navUl = document.createElement("ul")
+        navUl.id = "navUl"
+        navUl.classList.add("nav-ul")
 
         const fragment = new DocumentFragment()
 
@@ -84,79 +53,93 @@ class NavMenu extends HTMLElement {
 
             fragment.appendChild(listItem)
         })
-        this.navUl.appendChild(fragment)
-        this.navBar.appendChild(this.navUl)
+        navUl.appendChild(fragment)
+        this.navBar.appendChild(navUl)
     }
     initScroll() {
         const TABLET_WIDTH = 768
         const INFO_CONTAINER_THRESHOLD = 730
         const STATS_CONTAINER_THRESHOLD = 1300
-        const STATS_CONTAINER_CLASS = "stats-color-change"
-        const FAQS_CONTAINER_CLASS = "faqs-color-change"
 
         const innerWidth = window.innerWidth
         const isLargeDisplay = innerWidth > TABLET_WIDTH
 
         const scrollY = window.scrollY
-        const isAtInfoContainer = scrollY <= INFO_CONTAINER_THRESHOLD
+
         const isAtStatsContainer =
             scrollY > INFO_CONTAINER_THRESHOLD && scrollY <= STATS_CONTAINER_THRESHOLD
-        const isAtFaqsContainer = scrollY > STATS_CONTAINER_THRESHOLD
-
-        const haveStatsContainerClass = this.buttonClass === STATS_CONTAINER_CLASS
-        const haveFaqsContainerClass = this.buttonClass === FAQS_CONTAINER_CLASS
 
         if (isLargeDisplay) {
             if (scrollY > 100 && !this.isNavBarScrolled) {
                 this.navBar.classList.add("scrolled")
                 this.isNavBarScrolled = true
-            } else if (scrollY === 0) {
+            } else if (scrollY === 0 && this.isNavBarScrolled) {
                 this.navBar.classList.remove("scrolled")
                 this.isNavBarScrolled = false
             } else {
-                return
+                if (isAtStatsContainer && !this.isColorChanged) {
+                    this.itemsTitle.forEach((title) => {
+                        title.classList.add("title__color-change")
+                    })
+                    this.isColorChanged = true
+                } else if (!isAtStatsContainer && this.isColorChanged) {
+                    this.itemsTitle.forEach((title) => {
+                        title.classList.remove("title__color-change")
+                    })
+                    this.isColorChanged = false
+                }
             }
         } else {
             if (this.isNavBarScrolled) {
                 this.navBar.classList.remove("scrolled")
                 this.isNavBarScrolled = false
             }
-            const menuLines = this.shadowRoot.getElementById("menuLines")
+            const isAtInfoContainer = scrollY <= INFO_CONTAINER_THRESHOLD
+            const isAtFaqsContainer = scrollY > STATS_CONTAINER_THRESHOLD
+
+            const STATS_CONTAINER_CLASS = "stats-color-change"
+            const FAQS_CONTAINER_CLASS = "faqs-color-change"
+
+            const haveStatsContainerClass = this.buttonClass === STATS_CONTAINER_CLASS
+            const haveFaqsContainerClass = this.buttonClass === FAQS_CONTAINER_CLASS
+
             if (isAtInfoContainer) {
-                menuLines.classList.remove(STATS_CONTAINER_CLASS, FAQS_CONTAINER_CLASS)
+                this.menuLines.classList.remove(STATS_CONTAINER_CLASS, FAQS_CONTAINER_CLASS)
                 this.buttonClass = undefined
             } else if (isAtStatsContainer && !haveStatsContainerClass) {
                 if (haveFaqsContainerClass) {
-                    menuLines.classList.remove(FAQS_CONTAINER_CLASS)
+                    this.menuLines.classList.remove(FAQS_CONTAINER_CLASS)
                 }
                 menuLines.classList.add(STATS_CONTAINER_CLASS)
                 this.buttonClass = STATS_CONTAINER_CLASS
             } else if (isAtFaqsContainer && !haveFaqsContainerClass) {
                 if (haveStatsContainerClass) {
-                    menuLines.classList.remove(STATS_CONTAINER_CLASS)
+                    this.menuLines.classList.remove(STATS_CONTAINER_CLASS)
                 }
-                menuLines.classList.add(FAQS_CONTAINER_CLASS)
+                this.menuLines.classList.add(FAQS_CONTAINER_CLASS)
                 this.buttonClass = FAQS_CONTAINER_CLASS
             }
         }
     }
     toggleMenu() {
         this.navBar.classList.toggle("active")
-
-        this.navUl.classList.toggle("active")
+        const navUl = this.navBar.querySelector("#navUl")
+        navUl.classList.toggle("active")
     }
     async connectedCallback() {
         await this.loadContent()
         this.populateMenu()
 
+        this.itemsTitle = this.navBar.querySelectorAll(".nav-li__title")
+        this.menuLines = this.shadowRoot.getElementById("menuLines")
         window.addEventListener("scroll", () => this.scrollHandler())
 
-        this.menuButton = this.shadowRoot.getElementById("menuBtn")
-        this.menuButton.addEventListener("click", () => this.toggleMenuHandler())
+        this.menuCheckbox = this.shadowRoot.getElementById("menuCheckbox")
+        this.menuCheckbox.addEventListener("click", () => this.toggleMenuHandler())
     }
     disconnectedCallback() {
         window.removeEventListener("scroll", () => this.scrollHandler())
-        this.menuButton.removeEventListener("click", this.toggleMenuHandler())
+        this.menuCheckbox.removeEventListener("click", this.toggleMenuHandler())
     }
 }
 customElements.define("nav-menu", NavMenu)

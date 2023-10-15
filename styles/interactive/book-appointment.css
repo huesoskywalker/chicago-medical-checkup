@@ -14,10 +14,13 @@
     font-weight: 600;
     word-wrap: break-word;
 }
+.stats-component .title {
+    color: var(--COLOR-DARK-GRAY);
+}
 
 .info-component {
     margin-top: 10%;
-    background: var(--COLOR-PINK);
+    background: var(--COLOR-VIOLET);
 }
 
 .stats-component {
@@ -30,7 +33,7 @@
 
 .faqs-component {
     margin-top: 60px;
-    background: var(--COLOR-PINK);
+    background: var(--COLOR-VIOLET);
 }
 
 @media only screen and (max-width: 1480px) {

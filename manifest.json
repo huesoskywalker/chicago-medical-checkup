@@ -1,0 +1,29 @@
+{
+    "name": "Chicago Medical",
+    "short_name": "Chicago Med",
+    "description": "Your Trusted Healthcare Partner",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "transparent",
+    "icons": [
+        {
+            "src": "./assets/chicago-manifest.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/chicago-maskable.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "./assets/chicago-splash.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "splash_pages": null,
+    "prefer_related_applications": false
+}

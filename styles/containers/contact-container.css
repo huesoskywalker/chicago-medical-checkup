@@ -25,12 +25,7 @@
     z-index: 1;
     gap: 30px;
 }
-.column-2__subcolumn {
-    display: flex;
-    justify-content: center;
-    text-align: start;
-    gap: 50px;
-}
+
 .column-1__chicago-logo {
     width: 50%;
 }
@@ -57,13 +52,22 @@
     line-height: 25px;
     word-wrap: break-word;
 }
+.column-1__contact-info img {
+    width: 22px;
+    height: 28px;
+}
 
 .column-1__contact-info span {
     font-weight: 600;
     color: black;
 }
-
-.column-2-sub__column-2-sub__header,
+.column-2__sub-column {
+    display: flex;
+    justify-content: center;
+    text-align: start;
+    gap: 50px;
+}
+.column-2--sub__header,
 .column-2-sub__link {
     width: 100%;
     position: relative;
@@ -72,7 +76,7 @@
     word-wrap: break-word;
 }
 
-.column-2-sub__column-2-sub__header {
+.column-2-sub__header {
     font-size: 28px;
     font-weight: 500;
     line-height: 38px;
@@ -92,11 +96,6 @@
     display: inline-flex;
     justify-content: space-around;
     margin: 3% 0;
-}
-
-.column-1__contact-info img {
-    width: 30px;
-    height: auto;
 }
 
 .inner-2_logos {
@@ -121,7 +120,7 @@
     .inner-1__column-2 {
         gap: 20px;
     }
-    .column-2__subcolumn {
+    .column-2__sub-column {
         gap: 30px;
     }
     .column-1__chicago-logo img {
@@ -136,9 +135,9 @@
         font-size: 18px;
         line-height: 20px;
     }
-    .column-2-sub__column-2-sub__header {
-        font-size: 20px;
-        line-height: 20px;
+    .column-2-sub__header {
+        font-size: 26px;
+        line-height: 26px;
     }
     .column-2-sub__link {
         font-size: 16px;
@@ -147,9 +146,7 @@
     .inner-2 {
         gap: 40px;
     }
-    .column-1__contact-info img {
-        width: 22px;
-    }
+
     .inner-2_logos img {
         width: 122px;
     }
@@ -167,7 +164,7 @@
     .inner-1__column-2 {
         gap: 15px;
     }
-    .column-2__subcolumn {
+    .column-2__sub-column {
         gap: 20px;
     }
     .column-1__chicago-logo img {
@@ -182,16 +179,17 @@
         font-size: 16px;
         line-height: 18px;
     }
-
+    .column-2-sub__header {
+        font-size: 22px;
+        line-height: 22px;
+    }
     .column-2-sub__link {
         line-height: 18px;
     }
     .inner-2 {
         gap: 30px;
     }
-    .column-1__contact-info img {
-        width: 20px;
-    }
+
     .inner-2_logos img {
         width: 112px;
     }
@@ -207,7 +205,7 @@
         align-items: flex-start;
         padding-left: 8%;
     }
-    .column-2__subcolumn {
+    .column-2__sub-column {
         gap: 10px;
     }
 }
@@ -222,16 +220,13 @@
     .inner-1__column-2 {
         gap: 50px;
     }
-    .column-1__contact-info img {
-        width: 18px;
-        height: 28px;
-    }
+
     .column-1__contact-info div {
         display: flex;
         flex-direction: column;
         margin-left: 2%;
     }
-    .column-2__subcolumn {
+    .column-2__sub-column {
         flex-direction: column;
         gap: 50px;
     }
@@ -254,7 +249,7 @@
     }
     .inner-1__column-1,
     .inner-1__column-2,
-    .column-2__subcolumn {
+    .column-2__sub-column {
         gap: 35px;
     }
 }
@@ -265,7 +260,7 @@
     }
     .inner-1__column-1,
     .inner-1__column-2,
-    .column-2__subcolumn {
+    .column-2__sub-column {
         gap: 30px;
     }
 }

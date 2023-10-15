@@ -1,8 +1,4 @@
-const spotsData = {
-    prefix: "Only",
-    value: "11",
-    suffix: "spots available!",
-}
+import { spotsData } from "../../constants/containers/info-data.js"
 
 class InfoContainer extends HTMLElement {
     constructor() {
@@ -10,7 +6,7 @@ class InfoContainer extends HTMLElement {
         this.attachShadow({ mode: "open" })
         this.resizeHandler = this.handleResize.bind(this)
         this.contentRendered = false
-        this.responsiveText = undefined
+        this.responsiveText
         this.spotsData = spotsData
     }
     async loadContent() {
@@ -73,6 +69,9 @@ class InfoContainer extends HTMLElement {
             this.renderResponsiveContent()
         }
         window.addEventListener("resize", () => this.resizeHandler())
+    }
+    disconnectedCallback() {
+        window.removeEventListener("resize", () => this.resizeHandler())
     }
 }
 

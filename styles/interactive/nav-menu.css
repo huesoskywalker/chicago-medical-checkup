@@ -87,12 +87,12 @@
     left: 10%;
 }
 .logo-container img {
-    width: 170px;
-    height: auto;
+    width: 138px;
+    height: 63px;
 }
 .scrolled {
-    backdrop-filter: blur(15px);
-    background-color: var(--COLOR-LIGHT-GREY);
+    backdrop-filter: blur(30px);
+    background-color: var(--COLOR-LIGHT-GRAY);
 }
 .nav-ul {
     display: flex;
@@ -115,11 +115,16 @@
     padding: 10px;
     color: var(--COLOR-DARK-GRAY);
     font-size: 20px;
+    line-height: 20px;
     font-family: Montserrat;
     font-weight: 500;
     word-wrap: break-word;
     position: relative;
 }
+.title__color-change {
+    filter: brightness(10) invert(1);
+}
+
 .nav-li__title:hover {
     color: var(--COLOR-LIGHT-BLUE);
 }
@@ -144,9 +149,7 @@
     .logo-container {
         left: 8%;
     }
-    .logo-container img {
-        width: 140px;
-    }
+
     .nav-ul {
         margin-left: 10%;
         gap: 10px;
@@ -162,9 +165,7 @@
         top: 18px;
         left: 3%;
     }
-    .logo-container img {
-        width: 120px;
-    }
+
     .nav-ul {
         gap: 0px;
     }
