@@ -1,8 +1,14 @@
 import { menuData } from "../../constants/interactive/menu-data.js"
-class NavMenu extends HTMLElement {
-    constructor() {
+import { ContentLoaderInterface } from "../../interfaces/ContentLoaderInterface.js"
+import { ContentLoader } from "../../util/ContentLoader.js"
+export class NavMenu extends HTMLElement {
+    /**
+     * @param {ContentLoaderInterface} contentLoader
+     */
+    constructor(contentLoader) {
         super()
         this.attachShadow({ mode: "open" })
+        this.contentLoader = contentLoader
         this.menuData = menuData
         this.scrollHandler = this.initScroll.bind(this)
         this.isNavBarScrolled = false
@@ -14,19 +20,18 @@ class NavMenu extends HTMLElement {
         this.menuLines
         this.isColorChanged = false
     }
-    async loadContent() {
-        await Promise.all([
-            fetch("/templates/interactive/nav-menu.html").then((response) => response.text()),
-            fetch("/styles/interactive/nav-menu.css").then((response) => response.text()),
-        ]).then(([html, css]) => {
-            const template = document.createElement("template")
-            template.innerHTML = html
-            this.shadowRoot.appendChild(template.content.cloneNode(true))
 
-            const style = document.createElement("style")
-            style.textContent = css
-            this.shadowRoot.appendChild(style)
-        })
+    async loadContent() {
+        const templatePath = "/templates/interactive/nav-menu.html"
+        const stylePath = "/styles/interactive/nav-menu.css"
+        const nonce = "nav-menu"
+        const { template, style } = await this.contentLoader.loadContent(
+            templatePath,
+            stylePath,
+            nonce
+        )
+        this.shadowRoot.appendChild(template.content.cloneNode(true))
+        this.shadowRoot.appendChild(style)
     }
     populateMenu() {
         this.navBar = this.shadowRoot.getElementById("navBar")
@@ -142,4 +147,14 @@ class NavMenu extends HTMLElement {
         this.menuCheckbox.removeEventListener("click", this.toggleMenuHandler())
     }
 }
-customElements.define("nav-menu", NavMenu)
+
+const contentLoader = new ContentLoader()
+
+customElements.define(
+    "nav-menu",
+    class extends NavMenu {
+        constructor() {
+            super(contentLoader)
+        }
+    }
+)

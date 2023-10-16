@@ -1,8 +1,13 @@
 import { countdownData } from "../../constants/interactive/countdown-data.js"
+import { ContentLoader } from "../../util/ContentLoader.js"
 class CountDown extends HTMLElement {
-    constructor() {
+    /**
+     * @param {ContentLoaderInterface} contentLoader
+     */
+    constructor(contentLoader) {
         super()
         this.attachShadow({ mode: "open" })
+        this.contentLoader = contentLoader
         this.countdownData = countdownData
         this.endDate = "November 23, 2023, 23:59:59"
         this.countdownInterval
@@ -10,19 +15,18 @@ class CountDown extends HTMLElement {
     }
 
     async loadContent() {
-        await Promise.all([
-            fetch("/templates/interactive/count-down.html").then((response) => response.text()),
-            fetch("/styles/interactive/count-down.css").then((response) => response.text()),
-        ]).then(([html, css]) => {
-            const template = document.createElement("template")
-            template.innerHTML = html
-            this.shadowRoot.appendChild(template.content.cloneNode(true))
-
-            const style = document.createElement("style")
-            style.textContent = css
-            this.shadowRoot.appendChild(style)
-        })
+        const templatePath = "/templates/interactive/count-down.html"
+        const stylePath = "/styles/interactive/count-down.css"
+        const nonce = "count-down"
+        const { template, style } = await this.contentLoader.loadContent(
+            templatePath,
+            stylePath,
+            nonce
+        )
+        this.shadowRoot.appendChild(template.content.cloneNode(true))
+        this.shadowRoot.appendChild(style)
     }
+
     renderCountdown() {
         const itemsContainer = this.shadowRoot.getElementById("itemsContainer")
 
@@ -95,4 +99,13 @@ class CountDown extends HTMLElement {
         clearInterval(this.countdownInterval)
     }
 }
-customElements.define("count-down", CountDown)
+const contentLoader = new ContentLoader()
+
+customElements.define(
+    "count-down",
+    class extends CountDown {
+        constructor() {
+            super(contentLoader)
+        }
+    }
+)

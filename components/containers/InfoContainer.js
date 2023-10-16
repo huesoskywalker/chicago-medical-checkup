@@ -1,28 +1,32 @@
 import { spotsData } from "../../constants/containers/info-data.js"
+import { ContentLoader } from "../../util/ContentLoader.js"
 
 class InfoContainer extends HTMLElement {
-    constructor() {
+    /**
+     * @param {ContentLoaderInterface} contentLoader
+     */
+    constructor(contentLoader) {
         super()
         this.attachShadow({ mode: "open" })
+        this.contentLoader = contentLoader
         this.resizeHandler = this.handleResize.bind(this)
         this.contentRendered = false
         this.responsiveText
         this.spotsData = spotsData
     }
     async loadContent() {
-        await Promise.all([
-            fetch("/templates/containers/info-container.html").then((response) => response.text()),
-            fetch("/styles/containers/info-container.css").then((response) => response.text()),
-        ]).then(([html, css]) => {
-            const template = document.createElement("template")
-            template.innerHTML = html
-            this.shadowRoot.appendChild(template.content.cloneNode(true))
-
-            const style = document.createElement("style")
-            style.textContent = css
-            this.shadowRoot.appendChild(style)
-        })
+        const templatePath = "/templates/containers/info-container.html"
+        const stylePath = "/styles/containers/info-container.css"
+        const nonce = "info-container"
+        const { template, style } = await this.contentLoader.loadContent(
+            templatePath,
+            stylePath,
+            nonce
+        )
+        this.shadowRoot.appendChild(template.content.cloneNode(true))
+        this.shadowRoot.appendChild(style)
     }
+
     renderResponsiveContent() {
         const textElement = this.shadowRoot.getElementById("innerText")
 
@@ -75,4 +79,13 @@ class InfoContainer extends HTMLElement {
     }
 }
 
-customElements.define("info-container", InfoContainer)
+const contentLoader = new ContentLoader()
+
+customElements.define(
+    "info-container",
+    class extends InfoContainer {
+        constructor() {
+            super(contentLoader)
+        }
+    }
+)

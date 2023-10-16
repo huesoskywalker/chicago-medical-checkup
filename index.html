@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" type="text/css" href="./styles/main.css" />
+        <link rel="stylesheet" type="text/css" href="./styles/main.css" nonce="main" />
         <link rel="icon" type="image/png" href="./assets/chicago-medical.png" />
         <title>Chicago Medical</title>
         <meta
@@ -15,9 +15,10 @@
         <meta
             http-equiv="Content-Security-Policy"
             content="
-  script-src 'self' https://chicago-medical-checkup.vercel.app;
-  style-src 'self' https://chicago-medical-checkup.vercel.app;
-  img-src 'self' https://chicago-medical-checkup.vercel.app;
+  script-src 'self' https://chicago-medical-checkup.vercel.app/;
+  style-src 'self' https://chicago-medical-checkup.vercel.app/ 'nonce-main' 'nonce-nav-menu' 'nonce-info-container' 'nonce-stats-container' 'nonce-faqs-container' 'nonce-contact-container' 'nonce-count-down' 'nonce-book-appointment' 'nonce-full-circle' 'nonce-half-circle';
+  img-src 'self' https://chicago-medical-checkup.vercel.app/; 
+
 "
         />
         <link rel="manifest" href="./manifest.json" />
@@ -28,14 +29,14 @@
         <stats-container></stats-container>
         <faqs-container></faqs-container>
         <contact-container></contact-container>
-        <script type="module" src="/components/interactive/nav-menu.js" defer></script>
-        <script type="module" src="/components/containers/info-container.js" defer></script>
-        <script type="module" src="/components/interactive/count-down.js" defer></script>
-        <script type="module" src="/components/interactive/book-appointment.js" defer></script>
-        <script type="module" src="/components/containers/stats-container.js" defer></script>
-        <script type="module" src="/components/static/full-circle.js" defer></script>
-        <script type="module" src="/components//static/half-circle.js" defer></script>
-        <script type="module" src="/components/containers/faqs-container.js" defer></script>
-        <script type="module" src="/components/containers/contact-container.js" defer></script>
+        <script type="module" src="/components/interactive/NavMenu.js" defer></script>
+        <script type="module" src="/components/containers/InfoContainer.js" defer></script>
+        <script type="module" src="/components/interactive/CountDown.js" defer></script>
+        <script type="module" src="/components/interactive/BookAppointment.js" defer></script>
+        <script type="module" src="/components/containers/StatsContainer.js" defer></script>
+        <script type="module" src="/components/static/FullCircle.js" defer></script>
+        <script type="module" src="/components//static/HalfCircle.js" defer></script>
+        <script type="module" src="/components/containers/FaqsContainer.js" defer></script>
+        <script type="module" src="/components/containers/ContactContainer.js" defer></script>
     </body>
 </html>

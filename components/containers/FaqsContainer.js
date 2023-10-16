@@ -1,25 +1,29 @@
 import { faqsData } from "../../constants/containers/faqs-data.js"
+import { ContentLoader } from "../../util/ContentLoader.js"
 class FaqsContainer extends HTMLElement {
-    constructor() {
+    /**
+     * @param {ContentLoaderInterface} contentLoader
+     */
+    constructor(contentLoader) {
         super()
         this.attachShadow({ mode: "open" })
+        this.contentLoader = contentLoader
         this.faqsData = faqsData
         this.faqMemoization = undefined
     }
     async loadContent() {
-        await Promise.all([
-            fetch("/templates/containers/faqs-container.html").then((response) => response.text()),
-            fetch("/styles/containers/faqs-container.css").then((response) => response.text()),
-        ]).then(([html, css]) => {
-            const template = document.createElement("template")
-            template.innerHTML = html
-            this.shadowRoot.appendChild(template.content.cloneNode(true))
-
-            const style = document.createElement("style")
-            style.textContent = css
-            this.shadowRoot.appendChild(style)
-        })
+        const templatePath = "/templates/containers/faqs-container.html"
+        const stylePath = "/styles/containers/faqs-container.css"
+        const nonce = "faqs-container"
+        const { template, style } = await this.contentLoader.loadContent(
+            templatePath,
+            stylePath,
+            nonce
+        )
+        this.shadowRoot.appendChild(template.content.cloneNode(true))
+        this.shadowRoot.appendChild(style)
     }
+
     renderFAQS() {
         const faqContainer = this.shadowRoot.getElementById("faqsContainer")
 
@@ -85,4 +89,13 @@ class FaqsContainer extends HTMLElement {
         })
     }
 }
-customElements.define("faqs-container", FaqsContainer)
+const contentLoader = new ContentLoader()
+
+customElements.define(
+    "faqs-container",
+    class extends FaqsContainer {
+        constructor() {
+            super(contentLoader)
+        }
+    }
+)

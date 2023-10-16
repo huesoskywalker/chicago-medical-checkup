@@ -1,25 +1,26 @@
 import { statsData } from "../../constants/containers/stats-data.js"
+import { ContentLoader } from "../../util/ContentLoader.js"
 class StatsContainer extends HTMLElement {
-    constructor() {
+    /**
+     * @param {ContentLoaderInterface} contentLoader
+     */
+    constructor(contentLoader) {
         super()
         this.attachShadow({ mode: "open" })
+        this.contentLoader = contentLoader
         this.statsData = statsData
     }
     async loadContent() {
-        await Promise.all([
-            fetch("/templates/containers/stats-container.html").then((response) =>
-                response.text()
-            ),
-            fetch("/styles/containers/stats-container.css").then((response) => response.text()),
-        ]).then(([html, css]) => {
-            const template = document.createElement("template")
-            template.innerHTML = html
-            this.shadowRoot.appendChild(template.content.cloneNode(true))
-
-            const style = document.createElement("style")
-            style.textContent = css
-            this.shadowRoot.appendChild(style)
-        })
+        const templatePath = "/templates/containers/stats-container.html"
+        const stylePath = "/styles/containers/stats-container.css"
+        const nonce = "stats-container"
+        const { template, style } = await this.contentLoader.loadContent(
+            templatePath,
+            stylePath,
+            nonce
+        )
+        this.shadowRoot.appendChild(template.content.cloneNode(true))
+        this.shadowRoot.appendChild(style)
     }
     renderStats() {
         const mainContainer = this.shadowRoot.getElementById("innerContainer")
@@ -67,4 +68,13 @@ class StatsContainer extends HTMLElement {
     }
 }
 
-customElements.define("stats-container", StatsContainer)
+const contentLoader = new ContentLoader()
+
+customElements.define(
+    "stats-container",
+    class extends StatsContainer {
+        constructor() {
+            super(contentLoader)
+        }
+    }
+)
