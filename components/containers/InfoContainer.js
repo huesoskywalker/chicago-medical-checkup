@@ -1,9 +1,10 @@
 import { spotsData } from "../../constants/containers/info-data.js"
 import { ContentLoader } from "../../util/ContentLoader.js"
+import { ContentLoaderInjector } from "../../util/ContentLoaderInjector.js"
 
 class InfoContainer extends HTMLElement {
     /**
-     * @param {ContentLoaderInterface} contentLoader
+     * @param {ContentLoader} contentLoader
      */
     constructor(contentLoader) {
         super()
@@ -79,13 +80,13 @@ class InfoContainer extends HTMLElement {
     }
 }
 
-const contentLoader = new ContentLoader()
+const contentLoaderInstance = ContentLoaderInjector.getInstance()
 
 customElements.define(
     "info-container",
     class extends InfoContainer {
         constructor() {
-            super(contentLoader)
+            super(contentLoaderInstance)
         }
     }
 )

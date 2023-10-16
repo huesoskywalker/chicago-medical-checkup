@@ -1,8 +1,9 @@
+import { ContentLoaderInjector } from "../../util/ContentLoaderInjector.js"
 import { ContentLoader } from "/../../util/ContentLoader.js"
 
 class FullCircle extends HTMLElement {
     /**
-     * @param {ContentLoaderInterface} contentLoader
+     * @param {ContentLoader} contentLoader
      */
     constructor(contentLoader) {
         super()
@@ -43,13 +44,12 @@ class FullCircle extends HTMLElement {
     }
 }
 
-const contentLoader = new ContentLoader()
-
+const contentLoaderInstance = ContentLoaderInjector.getInstance()
 customElements.define(
     "full-circle",
     class extends FullCircle {
         constructor() {
-            super(contentLoader)
+            super(contentLoaderInstance)
         }
     }
 )

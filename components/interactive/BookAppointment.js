@@ -1,8 +1,9 @@
 import { ContentLoader } from "../../util/ContentLoader.js"
+import { ContentLoaderInjector } from "../../util/ContentLoaderInjector.js"
 
 class BookAppointment extends HTMLElement {
     /**
-     * @param {ContentLoaderInterface} contentLoader
+     * @param {ContentLoader} contentLoader
      */
     constructor(contentLoader) {
         super()
@@ -43,13 +44,13 @@ class BookAppointment extends HTMLElement {
     }
 }
 
-const contentLoader = new ContentLoader()
+const contentLoaderInstance = ContentLoaderInjector.getInstance()
 
 customElements.define(
     "book-appointment",
     class extends BookAppointment {
         constructor() {
-            super(contentLoader)
+            super(contentLoaderInstance)
         }
     }
 )

@@ -1,9 +1,9 @@
 import { menuData } from "../../constants/interactive/menu-data.js"
-import { ContentLoaderInterface } from "../../interfaces/ContentLoaderInterface.js"
 import { ContentLoader } from "../../util/ContentLoader.js"
+import { ContentLoaderInjector } from "../../util/ContentLoaderInjector.js"
 export class NavMenu extends HTMLElement {
     /**
-     * @param {ContentLoaderInterface} contentLoader
+     * @param {ContentLoader} contentLoader
      */
     constructor(contentLoader) {
         super()
@@ -148,13 +148,13 @@ export class NavMenu extends HTMLElement {
     }
 }
 
-const contentLoader = new ContentLoader()
+const contentLoaderInstance = ContentLoaderInjector.getInstance()
 
 customElements.define(
     "nav-menu",
     class extends NavMenu {
         constructor() {
-            super(contentLoader)
+            super(contentLoaderInstance)
         }
     }
 )

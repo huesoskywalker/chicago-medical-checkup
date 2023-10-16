@@ -1,8 +1,9 @@
 import { ContentLoader } from "../../util/ContentLoader.js"
+import { ContentLoaderInjector } from "../../util/ContentLoaderInjector.js"
 
 class ContactContainer extends HTMLElement {
     /**
-     * @param {ContentLoaderInterface} contentLoader
+     * @param {ContentLoader} contentLoader
      */
 
     constructor(contentLoader) {
@@ -28,13 +29,13 @@ class ContactContainer extends HTMLElement {
     }
 }
 
-const contentLoader = new ContentLoader()
+const contentLoaderInstance = ContentLoaderInjector.getInstance()
 
 customElements.define(
     "contact-container",
     class extends ContactContainer {
         constructor() {
-            super(contentLoader)
+            super(contentLoaderInstance)
         }
     }
 )

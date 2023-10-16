@@ -1,8 +1,9 @@
 import { countdownData } from "../../constants/interactive/countdown-data.js"
 import { ContentLoader } from "../../util/ContentLoader.js"
+import { ContentLoaderInjector } from "../../util/ContentLoaderInjector.js"
 class CountDown extends HTMLElement {
     /**
-     * @param {ContentLoaderInterface} contentLoader
+     * @param {ContentLoader} contentLoader
      */
     constructor(contentLoader) {
         super()
@@ -99,13 +100,13 @@ class CountDown extends HTMLElement {
         clearInterval(this.countdownInterval)
     }
 }
-const contentLoader = new ContentLoader()
 
+const contentLoaderInstance = ContentLoaderInjector.getInstance()
 customElements.define(
     "count-down",
     class extends CountDown {
         constructor() {
-            super(contentLoader)
+            super(contentLoaderInstance)
         }
     }
 )
