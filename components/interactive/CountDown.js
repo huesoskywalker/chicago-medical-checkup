@@ -10,7 +10,7 @@ class CountDown extends HTMLElement {
         this.attachShadow({ mode: "open" })
         this.contentLoader = contentLoader
         this.countdownData = countdownData
-        this.endDate = "November 23, 2023, 23:59:59"
+        this.endDate = "February 29, 2024, 23:59:59"
         this.countdownInterval
         this.itemValue = {}
     }
